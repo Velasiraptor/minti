@@ -1,0 +1,90 @@
+[gd_scene load_steps=9 format=3 uid="uid://cy2ryh8320b6h"]
+
+[ext_resource type="Script" path="res://Scenes/Minotaur/minotaur.gd" id="1_8mv6e"]
+[ext_resource type="Texture2D" uid="uid://b1thsfkr00x4y" path="res://Sprites/Minotaur/Left_arm/left_arm_idle.png" id="1_s2gs0"]
+[ext_resource type="Texture2D" uid="uid://bmr5msk7dup0d" path="res://Sprites/Minotaur/Right_arm/right_arm_idle.png" id="2_hd7wj"]
+[ext_resource type="Texture2D" uid="uid://dn4m7w21pg80s" path="res://Sprites/Minotaur/Right_arm/right_arm_grab_1.png" id="3_x2v05"]
+[ext_resource type="Texture2D" uid="uid://e11o5uqj8t3f" path="res://Sprites/Minotaur/Right_arm/right_arm_grab_2.png" id="4_gds46"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d6x20"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_s2gs0")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6h4w4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_x2v05")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_gds46")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_x2v05")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_hd7wj")
+}],
+"loop": false,
+"name": &"grab",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_hd7wj")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1kubb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_x2v05")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_gds46")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_x2v05")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_hd7wj")
+}],
+"loop": false,
+"name": &"grab",
+"speed": 10.0
+}]
+
+[node name="Minotaur" type="Node2D" groups=["Minotaur"]]
+scale = Vector2(0.75, 0.75)
+script = ExtResource("1_8mv6e")
+
+[node name="Animated_left" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-918.667, 453.333)
+sprite_frames = SubResource("SpriteFrames_d6x20")
+animation = &"idle"
+
+[node name="Animated_right_short" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(306.667, 1002.67)
+sprite_frames = SubResource("SpriteFrames_6h4w4")
+animation = &"idle"
+
+[node name="Animated_right_long" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+position = Vector2(821.333, 361.333)
+rotation = 0.627765
+sprite_frames = SubResource("SpriteFrames_1kubb")
+animation = &"grab"

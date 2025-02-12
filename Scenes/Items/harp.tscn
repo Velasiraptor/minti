@@ -1,0 +1,133 @@
+[gd_scene load_steps=10 format=3 uid="uid://cb1ibijfpvpq2"]
+
+[ext_resource type="Script" path="res://Scenes/Items/harp.gd" id="1_pxwhu"]
+[ext_resource type="Texture2D" uid="uid://b8adtdohgrppj" path="res://Sprites/Items/Harp.png" id="2_ppnvl"]
+[ext_resource type="Texture2D" uid="uid://evw1w0rwrrsg" path="res://Sprites/Items/Harp_outline.png" id="3_kdgxm"]
+[ext_resource type="AudioStream" uid="uid://cld8o74cn8ysb" path="res://Music/Music_game.mp3" id="4_8q38l"]
+[ext_resource type="Texture2D" uid="uid://br0vhb4ggx8j5" path="res://Sprites/note.png" id="5_38oqo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8py0b"]
+radius = 125.786
+
+[sub_resource type="Animation" id="Animation_utchs"]
+resource_name = "play_music"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.75, 0.75), Vector2(0.78, 0.78), Vector2(0.75, 0.75), Vector2(0.78, 0.78), Vector2(0.75, 0.75)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Note:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(40, -94.6667), Vector2(74.359, -130.769), Vector2(46.6667, -160), Vector2(89.7436, -179.487), Vector2(72, -234.667)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Note:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 1.96667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_u7gs4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.75, 0.75)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Note:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(40, -94.6667)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Note:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oh65k"]
+_data = {
+"RESET": SubResource("Animation_u7gs4"),
+"play_music": SubResource("Animation_utchs")
+}
+
+[node name="Harp" type="Area2D"]
+scale = Vector2(0.75, 0.75)
+script = ExtResource("1_pxwhu")
+
+[node name="Harp_spr" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+texture = ExtResource("2_ppnvl")
+
+[node name="HarpOutline_spr" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+texture = ExtResource("3_kdgxm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_8py0b")
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("4_8q38l")
+volume_db = -20.0
+autoplay = true
+
+[node name="Animation_Harp" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_oh65k")
+}
+autoplay = "play_music"
+
+[node name="Note" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(40, -94.6667)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("5_38oqo")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

@@ -1,0 +1,333 @@
+[gd_scene load_steps=40 format=3 uid="uid://cbtg1e86c4hhh"]
+
+[ext_resource type="Texture2D" uid="uid://dp7lgly6mnnav" path="res://Sprites/Background/Background.png" id="1_2c32x"]
+[ext_resource type="Texture2D" uid="uid://d0amdchhp80h5" path="res://Sprites/Background/light.png" id="2_5l6wg"]
+[ext_resource type="PackedScene" uid="uid://dh7ll11x8aurc" path="res://Scenes/Items/item.tscn" id="2_6gmc7"]
+[ext_resource type="PackedScene" uid="uid://bty8e4xi3nppy" path="res://Scenes/Table/table.tscn" id="2_8lveu"]
+[ext_resource type="Shader" path="res://Shaders/Blur.gdshader" id="2_fbna1"]
+[ext_resource type="Texture2D" uid="uid://i7q8qfgs12" path="res://Sprites/Background/torch.png" id="3_0uxn1"]
+[ext_resource type="Texture2D" uid="uid://dwt4qp6qnnhn3" path="res://Sprites/Items/Meat.png" id="3_30tcc"]
+[ext_resource type="Texture2D" uid="uid://bqrm3lo2jyuw6" path="res://icon.svg" id="3_d6i1y"]
+[ext_resource type="Texture2D" uid="uid://brua3600t0n2h" path="res://Sprites/Items/Beer.png" id="3_wjluu"]
+[ext_resource type="Texture2D" uid="uid://15qrlhy106ck" path="res://Sprites/Items/Meat_outline.png" id="4_05ukm"]
+[ext_resource type="Texture2D" uid="uid://csr3qmf26ax85" path="res://Sprites/Fire/fire_3.png" id="4_bltfp"]
+[ext_resource type="Texture2D" uid="uid://b2eys33rttlco" path="res://Sprites/Items/Beer_outline.png" id="4_j3s7l"]
+[ext_resource type="Texture2D" uid="uid://ca5odmgeonlqy" path="res://Sprites/Fire/fire_4.png" id="5_cgch8"]
+[ext_resource type="Texture2D" uid="uid://jb4i44jvtnft" path="res://Sprites/Items/Energy.png" id="5_rahx3"]
+[ext_resource type="Texture2D" uid="uid://1d4tjad46et5" path="res://Sprites/Fire/fire_5.png" id="6_6kct5"]
+[ext_resource type="Texture2D" uid="uid://b6i5ngq8ieqe8" path="res://Sprites/Items/Energy_outline.png" id="6_f21tu"]
+[ext_resource type="Texture2D" uid="uid://ckkd5xwgp2j2s" path="res://Sprites/Fire/fire_6.png" id="7_eha0d"]
+[ext_resource type="Texture2D" uid="uid://begdq32a1wfg1" path="res://Sprites/Fire/fire_7.png" id="8_1xpkm"]
+[ext_resource type="Texture2D" uid="uid://cd1rpygkabxn6" path="res://Sprites/Fire/fire_0.png" id="9_jopa6"]
+[ext_resource type="Texture2D" uid="uid://cln7utwaskr6d" path="res://Sprites/Items/Horseshoe.png" id="9_ksmgt"]
+[ext_resource type="Texture2D" uid="uid://w0fi734sjdpp" path="res://Sprites/Items/Horseshoe_outline.png" id="10_1yw8s"]
+[ext_resource type="Texture2D" uid="uid://504mo2nt4kpa" path="res://Sprites/Fire/fire_1.png" id="10_r6tw0"]
+[ext_resource type="Texture2D" uid="uid://buu3p85myssnk" path="res://Sprites/Fire/fire_2.png" id="11_4w0bd"]
+[ext_resource type="Texture2D" uid="uid://di622a5he2xfe" path="res://Sprites/Items/Rune.png" id="11_17cvt"]
+[ext_resource type="Texture2D" uid="uid://7q37hrl6mas8" path="res://Sprites/Items/Rune_outline.png" id="12_ufqll"]
+[ext_resource type="Texture2D" uid="uid://qh7na4n8t2fu" path="res://Sprites/Items/Scroll.png" id="13_1ttdh"]
+[ext_resource type="Texture2D" uid="uid://bsb76jdl6th00" path="res://Sprites/Items/Scroll_outline.png" id="14_b3nl8"]
+[ext_resource type="Texture2D" uid="uid://ocj4khqelc7b" path="res://Sprites/Items/Pillow.png" id="15_5oofi"]
+[ext_resource type="Texture2D" uid="uid://n47nesnis25g" path="res://Sprites/Items/Pillow_outline.png" id="16_a3tep"]
+[ext_resource type="Texture2D" uid="uid://bv4ud6rsrmifl" path="res://Sprites/Kiosk/Kiosk.png" id="18_fqqo3"]
+[ext_resource type="Texture2D" uid="uid://ds5lwyved0jwa" path="res://Sprites/Kiosk/flash.png" id="31_n1v50"]
+[ext_resource type="Texture2D" uid="uid://tgp4spgjse6r" path="res://Sprites/Items/map.png" id="32_4qie0"]
+[ext_resource type="PackedScene" uid="uid://cy2ryh8320b6h" path="res://Scenes/Minotaur/minotaur.tscn" id="32_ia3cw"]
+[ext_resource type="PackedScene" uid="uid://cb1ibijfpvpq2" path="res://Scenes/Items/harp.tscn" id="33_bfj6j"]
+
+[sub_resource type="Animation" id="Animation_a3p3x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Minotaur:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.75, 0.75)]
+}
+
+[sub_resource type="Animation" id="Animation_l7oew"]
+resource_name = "back"
+length = 10.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 20), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Minotaur:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.75, 0.75), Vector2(0.77, 0.77)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_imvua"]
+_data = {
+"RESET": SubResource("Animation_a3p3x"),
+"back": SubResource("Animation_l7oew")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_egq3h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_1xpkm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_jopa6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_r6tw0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_4w0bd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_bltfp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_cgch8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_6kct5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_eha0d")
+}],
+"loop": true,
+"name": &"fire",
+"speed": 10.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8isbu"]
+shader = ExtResource("2_fbna1")
+shader_parameter/lod = 0.7
+
+[node name="Game" type="Node2D"]
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="Animation_Back" type="AnimationPlayer" parent="Background"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_imvua")
+}
+autoplay = "back"
+
+[node name="Background_sprite" type="Sprite2D" parent="Background"]
+modulate = Color(0.804743, 0.804743, 0.804743, 1)
+position = Vector2(0, 20)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("1_2c32x")
+
+[node name="Light" type="Sprite2D" parent="Background"]
+modulate = Color(1, 1, 1, 0.772549)
+position = Vector2(-81, 6)
+scale = Vector2(1.1374, 1.18548)
+texture = ExtResource("2_5l6wg")
+
+[node name="Torch" type="Sprite2D" parent="Background"]
+position = Vector2(-84, 70)
+texture = ExtResource("3_0uxn1")
+
+[node name="fire" type="AnimatedSprite2D" parent="Background"]
+position = Vector2(-86, -26)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_egq3h")
+animation = &"fire"
+autoplay = "fire"
+frame_progress = 0.879615
+
+[node name="Light2" type="Sprite2D" parent="Background"]
+modulate = Color(1, 1, 1, 0.772549)
+position = Vector2(-15, -363)
+texture = ExtResource("2_5l6wg")
+
+[node name="Torch2" type="Sprite2D" parent="Background"]
+position = Vector2(-17, -307)
+texture = ExtResource("3_0uxn1")
+
+[node name="fire2" type="AnimatedSprite2D" parent="Background"]
+position = Vector2(-19, -403)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_egq3h")
+animation = &"fire"
+autoplay = "fire"
+frame_progress = 0.879615
+
+[node name="Blur" type="TextureRect" parent="Background"]
+material = SubResource("ShaderMaterial_8isbu")
+offset_left = -1039.5
+offset_top = -620.25
+offset_right = 1765.5
+offset_bottom = 1046.75
+texture = ExtResource("3_d6i1y")
+
+[node name="Kiosk" type="Sprite2D" parent="."]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("18_fqqo3")
+
+[node name="Flash" type="Sprite2D" parent="Kiosk"]
+position = Vector2(-990.667, -437.333)
+texture = ExtResource("31_n1v50")
+
+[node name="fire" type="AnimatedSprite2D" parent="Kiosk/Flash"]
+show_behind_parent = true
+position = Vector2(-4, 18.6667)
+scale = Vector2(2.71186, 1)
+sprite_frames = SubResource("SpriteFrames_egq3h")
+animation = &"fire"
+autoplay = "fire"
+frame_progress = 0.09476
+
+[node name="Table" parent="." instance=ExtResource("2_8lveu")]
+position = Vector2(-292, 330)
+
+[node name="Back_items" type="Node2D" parent="."]
+modulate = Color(0.374139, 0.374139, 0.374139, 1)
+scale = Vector2(0.7, 0.7)
+
+[node name="Energy" type="Sprite2D" parent="Back_items"]
+position = Vector2(167.143, 365.714)
+texture = ExtResource("5_rahx3")
+
+[node name="Energy2" type="Sprite2D" parent="Back_items"]
+position = Vector2(198.571, 392.857)
+texture = ExtResource("5_rahx3")
+
+[node name="Energy3" type="Sprite2D" parent="Back_items"]
+position = Vector2(267.143, 378.571)
+texture = ExtResource("5_rahx3")
+
+[node name="Horseshoe" type="Sprite2D" parent="Back_items"]
+position = Vector2(850.143, -165.357)
+texture = ExtResource("9_ksmgt")
+
+[node name="Horseshoe2" type="Sprite2D" parent="Back_items"]
+position = Vector2(941.571, -169.643)
+texture = ExtResource("9_ksmgt")
+
+[node name="Rune" type="Sprite2D" parent="Back_items"]
+position = Vector2(1186.93, -176.429)
+texture = ExtResource("11_17cvt")
+
+[node name="Rune2" type="Sprite2D" parent="Back_items"]
+position = Vector2(1090, -157.143)
+texture = ExtResource("11_17cvt")
+
+[node name="Pillow" type="Sprite2D" parent="Back_items"]
+position = Vector2(992.857, 227.143)
+texture = ExtResource("15_5oofi")
+
+[node name="Meat" type="Sprite2D" parent="Back_items"]
+position = Vector2(517.679, 404.143)
+texture = ExtResource("3_30tcc")
+
+[node name="Meat2" type="Sprite2D" parent="Back_items"]
+position = Vector2(606.25, 437)
+texture = ExtResource("3_30tcc")
+
+[node name="Beer" type="Sprite2D" parent="Back_items"]
+position = Vector2(699.929, 414.571)
+texture = ExtResource("3_wjluu")
+
+[node name="Scroll" type="Sprite2D" parent="Back_items"]
+position = Vector2(1204.29, -472.857)
+texture = ExtResource("13_1ttdh")
+
+[node name="Map" type="Sprite2D" parent="."]
+position = Vector2(609, -329)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("32_4qie0")
+
+[node name="Items" type="Node2D" parent="."]
+
+[node name="Energy" parent="Items" instance=ExtResource("2_6gmc7")]
+position = Vector2(160, 288)
+texture = ExtResource("5_rahx3")
+name_item = "energy"
+texture_area = ExtResource("6_f21tu")
+text_description = "ЭНЕРГЕТИК"
+
+[node name="Meat" parent="Items" instance=ExtResource("2_6gmc7")]
+position = Vector2(352.375, 324.9)
+texture = ExtResource("3_30tcc")
+name_item = "meat"
+texture_area = ExtResource("4_05ukm")
+text_description = "МЯСО"
+
+[node name="Beer" parent="Items" instance=ExtResource("2_6gmc7")]
+position = Vector2(552.95, 302.2)
+texture = ExtResource("3_wjluu")
+name_item = "beer"
+texture_area = ExtResource("4_j3s7l")
+text_description = "ПИВО"
+
+[node name="Scroll_of_fire" parent="Items" instance=ExtResource("2_6gmc7")]
+position = Vector2(803, -315)
+texture = ExtResource("13_1ttdh")
+name_item = "fire"
+texture_area = ExtResource("14_b3nl8")
+text_description = "СВИТОК ОГНЯ"
+short_arm = false
+
+[node name="Pillow" parent="Items" instance=ExtResource("2_6gmc7")]
+position = Vector2(735, 180)
+texture = ExtResource("15_5oofi")
+name_item = "pillow"
+texture_area = ExtResource("16_a3tep")
+text_description = "ПОДУШКА"
+short_arm = false
+
+[node name="Horseshoe" parent="Items" instance=ExtResource("2_6gmc7")]
+position = Vector2(628.1, -93.75)
+texture = ExtResource("9_ksmgt")
+name_item = "luck"
+texture_area = ExtResource("10_1yw8s")
+text_description = "ПОДКОВА УДАЧИ"
+short_arm = false
+
+[node name="Rune" parent="Items" instance=ExtResource("2_6gmc7")]
+position = Vector2(798.85, -96.5)
+texture = ExtResource("11_17cvt")
+name_item = "protection"
+texture_area = ExtResource("12_ufqll")
+text_description = "ЗАЩИТНАЯ РУНА"
+short_arm = false
+
+[node name="Harp" parent="." instance=ExtResource("33_bfj6j")]
+position = Vector2(-835, 299)
+
+[node name="Minotaur" parent="." instance=ExtResource("32_ia3cw")]
+
+[node name="Camera" type="Camera2D" parent="."]

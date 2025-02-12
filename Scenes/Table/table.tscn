@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://bty8e4xi3nppy"]
+
+[ext_resource type="Script" path="res://Scenes/Table/table.gd" id="1_5bnc1"]
+
+[node name="Table" type="Node2D" groups=["Table"]]
+script = ExtResource("1_5bnc1")
+
+[node name="left" type="Marker2D" parent="."]
+position = Vector2(-80, 0)
+
+[node name="Item_left" type="Sprite2D" parent="left"]
+unique_name_in_owner = true
+scale = Vector2(0.75, 0.75)
+
+[node name="right" type="Marker2D" parent="."]
+position = Vector2(80, 0)
+
+[node name="Item_right" type="Sprite2D" parent="right"]
+unique_name_in_owner = true
+scale = Vector2(0.75, 0.75)

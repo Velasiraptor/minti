@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cbtg1e86c4hhh"]
+
+[ext_resource type="PackedScene" uid="uid://dh7ll11x8aurc" path="res://Scenes/Items/item.tscn" id="2_6gmc7"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Item" parent="." instance=ExtResource("2_6gmc7")]
+position = Vector2(244, 438)
+name_item = "el"
