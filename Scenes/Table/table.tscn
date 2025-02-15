@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://bty8e4xi3nppy"]
+[gd_scene load_steps=6 format=3 uid="uid://bty8e4xi3nppy"]
 
 [ext_resource type="Script" path="res://Scenes/Table/table.gd" id="1_5bnc1"]
+[ext_resource type="Texture2D" uid="uid://bnm1cea1o7nvf" path="res://Sprites/Kiosk/button_take.png" id="2_bckfv"]
+[ext_resource type="Texture2D" uid="uid://b0hlfg5wscyis" path="res://Sprites/Kiosk/button_take_hover.png" id="3_dapmm"]
+[ext_resource type="FontFile" uid="uid://082o24hwqm21" path="res://Fonts/baskervillebold.ttf" id="4_8rpua"]
+[ext_resource type="AudioStream" uid="uid://dskk56tyn0jil" path="res://Sounds/moo.mp3" id="5_qds27"]
 
 [node name="Table" type="Node2D" groups=["Table"]]
 script = ExtResource("1_5bnc1")
@@ -18,3 +22,40 @@ position = Vector2(80, 0)
 [node name="Item_right" type="Sprite2D" parent="right"]
 unique_name_in_owner = true
 scale = Vector2(0.75, 0.75)
+
+[node name="Choice_button" type="TextureButton" parent="."]
+unique_name_in_owner = true
+offset_left = -112.0
+offset_top = 93.0
+offset_right = 187.0
+offset_bottom = 240.0
+scale = Vector2(0.75, 0.75)
+focus_mode = 0
+texture_normal = ExtResource("2_bckfv")
+texture_hover = ExtResource("3_dapmm")
+
+[node name="Label" type="Label" parent="Choice_button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.055
+anchor_top = 0.102
+anchor_right = 0.939
+anchor_bottom = 0.868
+offset_left = 6.22169
+offset_top = 3.67267
+offset_right = 6.31369
+offset_bottom = 3.68666
+theme_override_colors/font_color = Color(0.219417, 0.118938, 0.122804, 1)
+theme_override_fonts/font = ExtResource("4_8rpua")
+theme_override_font_sizes/font_size = 50
+text = "ПРОДАТЬ"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="Audio_moo" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("5_qds27")
+volume_db = -10.0
+
+[connection signal="pressed" from="Choice_button" to="." method="_on_choice_button_pressed"]

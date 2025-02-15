@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://6v6lro8ira7k"]
+
+[ext_resource type="Texture2D" uid="uid://dmr1arhhkyjtd" path="res://Sprites/Ends/bad_end.png" id="1_0832a"]
+[ext_resource type="FontFile" uid="uid://082o24hwqm21" path="res://Fonts/baskervillebold.ttf" id="2_1hwah"]
+
+[node name="Bad_end" type="Node2D"]
+
+[node name="Camera" type="Camera2D" parent="."]
+
+[node name="BadEnd" type="Sprite2D" parent="."]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("1_0832a")
+
+[node name="text" type="Node2D" parent="BadEnd"]
+
+[node name="ColorRect" type="ColorRect" parent="BadEnd/text"]
+offset_left = -761.0
+offset_top = 87.0
+offset_right = 771.0
+offset_bottom = 675.0
+color = Color(0.152941, 0.152941, 0.152941, 0.8)
+
+[node name="txt" type="Label" parent="BadEnd/text"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -732.0
+offset_top = 113.0
+offset_right = 753.0
+offset_bottom = 641.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.837091, 0.685055, 0.596566, 1)
+theme_override_fonts/font = ExtResource("2_1hwah")
+theme_override_font_sizes/font_size = 64
+text = "Минотавр старался как мог, но продолжал продавать покупателям не то, что они хотели.
+
+Из-за этого его ругали и в его лавку стало приходить все меньше и меньше покупателей.
+
+Он забросил эту идею и закрыл свой магазин, после чего продолжил свою старую жизнь, нападая на путников в лабиринте."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2

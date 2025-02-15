@@ -1,13 +1,23 @@
-[gd_scene load_steps=9 format=3 uid="uid://cy2ryh8320b6h"]
+[gd_scene load_steps=11 format=3 uid="uid://cy2ryh8320b6h"]
 
 [ext_resource type="Script" path="res://Scenes/Minotaur/minotaur.gd" id="1_8mv6e"]
 [ext_resource type="Texture2D" uid="uid://b1thsfkr00x4y" path="res://Sprites/Minotaur/Left_arm/left_arm_idle.png" id="1_s2gs0"]
+[ext_resource type="Texture2D" uid="uid://dy1hsf461ljhx" path="res://Sprites/Minotaur/Left_arm/left_arm_dis.png" id="2_53mie"]
 [ext_resource type="Texture2D" uid="uid://bmr5msk7dup0d" path="res://Sprites/Minotaur/Right_arm/right_arm_idle.png" id="2_hd7wj"]
 [ext_resource type="Texture2D" uid="uid://dn4m7w21pg80s" path="res://Sprites/Minotaur/Right_arm/right_arm_grab_1.png" id="3_x2v05"]
 [ext_resource type="Texture2D" uid="uid://e11o5uqj8t3f" path="res://Sprites/Minotaur/Right_arm/right_arm_grab_2.png" id="4_gds46"]
+[ext_resource type="Texture2D" uid="uid://drfi1l82y4hl1" path="res://Sprites/Minotaur/Left_arm/left_arm_nice.png" id="4_ur27a"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_d6x20"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_53mie")
+}],
+"loop": true,
+"name": &"dis",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_s2gs0")
@@ -15,6 +25,14 @@ animations = [{
 "loop": true,
 "name": &"idle",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_ur27a")
+}],
+"loop": true,
+"name": &"nice",
+"speed": 5.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6h4w4"]
@@ -73,7 +91,7 @@ script = ExtResource("1_8mv6e")
 unique_name_in_owner = true
 position = Vector2(-918.667, 453.333)
 sprite_frames = SubResource("SpriteFrames_d6x20")
-animation = &"idle"
+animation = &"dis"
 
 [node name="Animated_right_short" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true

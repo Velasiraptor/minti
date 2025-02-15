@@ -9,6 +9,7 @@ extends Sprite2D
 @onready var area_item = %Area_item
 @onready var description = %Description
 @onready var decr_label = %decr_Label
+@onready var audio_item = %Audio_item
 
 
 
@@ -48,7 +49,7 @@ func input_item(name_item):
 			get_tree().call_group("Minotaur", "grab_short")
 		else:
 			get_tree().call_group("Minotaur", "grab_long")
-		print(name_item) #тестовое
+		audio_item.play()
 	elif mouse_in_item and Input.is_action_just_pressed("click") and item_active:
 		item_off()
 
@@ -56,4 +57,3 @@ func item_off(): #Возвращение итема обратно
 	item_active = false
 	modulate = "ffffff"
 	get_tree().call_group("Table", "item_minus", name_item)
-	print("not" + name_item) #тестовое

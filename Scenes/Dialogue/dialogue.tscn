@@ -1,0 +1,202 @@
+[gd_scene load_steps=12 format=3 uid="uid://cphptms0ahfta"]
+
+[ext_resource type="Texture2D" uid="uid://p6didokwy7ex" path="res://Sprites/Characters/Knight/knight_idle.png" id="1_ux08i"]
+[ext_resource type="Texture2D" uid="uid://e6o1wrv7hakg" path="res://Sprites/Characters/Knight/knight_talk.png" id="2_l2a8v"]
+[ext_resource type="Script" path="res://Scenes/Dialogue/dialogue.gd" id="3_eweae"]
+[ext_resource type="FontFile" uid="uid://082o24hwqm21" path="res://Fonts/baskervillebold.ttf" id="4_iipl2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jsn2q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ux08i")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_l2a8v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_l2a8v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_ux08i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_ux08i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_l2a8v")
+}],
+"loop": true,
+"name": &"talk",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_jotaa"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_c1gik"]
+resource_name = "start"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"not_active"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pjjkd"]
+_data = {
+"RESET": SubResource("Animation_jotaa"),
+"start": SubResource("Animation_c1gik")
+}
+
+[sub_resource type="Animation" id="Animation_dtloj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_jftuy"]
+resource_name = "run_text"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lhpj6"]
+_data = {
+"RESET": SubResource("Animation_dtloj"),
+"run_text": SubResource("Animation_jftuy")
+}
+
+[node name="dialogue" type="AnimatedSprite2D" groups=["Dialogue"]]
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_jsn2q")
+animation = &"idle"
+script = ExtResource("3_eweae")
+
+[node name="Start_animation" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_pjjkd")
+}
+
+[node name="text_input" type="Label" parent="."]
+unique_name_in_owner = true
+z_index = 1
+anchors_preset = -1
+anchor_left = 0.808323
+anchor_top = 0.105652
+anchor_right = 1.598
+anchor_bottom = 0.611
+offset_left = -406.167
+offset_top = -514.667
+offset_right = -406.174
+offset_bottom = -519.218
+theme_override_colors/font_color = Color(0.889403, 0.750221, 0.570639, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("4_iipl2")
+theme_override_font_sizes/font_size = 50
+autowrap_mode = 2
+
+[node name="Animation_text" type="AnimationPlayer" parent="text_input"]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_lhpj6")
+}
+
+[node name="Audio_step" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+
+[node name="Audio_good" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+
+[node name="Audio_bad" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+
+[node name="Timer_talk" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 2.0
+one_shot = true
+
+[connection signal="timeout" from="Timer_talk" to="." method="_on_timer_talk_timeout"]
