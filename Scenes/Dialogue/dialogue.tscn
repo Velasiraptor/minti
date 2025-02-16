@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://cphptms0ahfta"]
+[gd_scene load_steps=13 format=3 uid="uid://cphptms0ahfta"]
 
 [ext_resource type="Texture2D" uid="uid://p6didokwy7ex" path="res://Sprites/Characters/Knight/knight_idle.png" id="1_ux08i"]
 [ext_resource type="Texture2D" uid="uid://e6o1wrv7hakg" path="res://Sprites/Characters/Knight/knight_talk.png" id="2_l2a8v"]
 [ext_resource type="Script" path="res://Scenes/Dialogue/dialogue.gd" id="3_eweae"]
 [ext_resource type="FontFile" uid="uid://082o24hwqm21" path="res://Fonts/baskervillebold.ttf" id="4_iipl2"]
+[ext_resource type="AudioStream" uid="uid://buqwbp2f5o37u" path="res://Sounds/bell.mp3" id="5_bcvi8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jsn2q"]
 animations = [{
@@ -198,5 +199,9 @@ unique_name_in_owner = true
 unique_name_in_owner = true
 wait_time = 2.0
 one_shot = true
+
+[node name="Audio_bell" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("5_bcvi8")
 
 [connection signal="timeout" from="Timer_talk" to="." method="_on_timer_talk_timeout"]

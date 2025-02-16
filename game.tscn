@@ -537,6 +537,45 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Animation" id="Animation_8017j"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(61.3334, -42.6667)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_xsi7w"]
 resource_name = "plus"
 length = 1.5
@@ -575,45 +614,6 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_8017j"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(61.3334, -42.6667)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_urg30"]
@@ -1072,7 +1072,7 @@ text_2 = "Ну так что, этого хватит на карту? Выру�
 txt_2_arm_idle = false
 txt_2_arm_dis = true
 text_3 = "Зараза... да пойди ты мне навстречу, ради богов! Ладно, я не хотел горячиться, дружище, хехе... "
-text_4 = "Давай немного разрядим обстановку, а? Может выпьем по бутылочке?"
+text_4 = "Давай немного разрядим обстановку, а? Может выпьем по кружке?"
 text_good = "Хаха, а я сразу понял что ты не дурак! За твое здоровье!"
 text_bad = "..."
 item_1 = "beer"
@@ -1693,25 +1693,6 @@ volume_db = -2.0
 stream = ExtResource("24_ga80r")
 volume_db = 2.0
 
-[node name="Knight_5" parent="Dialogues" instance=ExtResource("14_004et")]
-position = Vector2(-318, -10)
-text_1 = "Минотавр! Я рад сообщить тебе, что наш путь подошел к концу! Я нашел ее, нашу дражайшую принцессу. Она немного... изменилась, но все так же прекрасна."
-text_2 = "А еще она сразила того поганца, который ее утащил. Сама! Одолела его, а когда я нашел ее, он уже был связан. Я горд служить такой деве как она."
-text_3 = "А что до тебя. Я пришел склонить колено пред тобой, ты выручил нас обоих! Последнее что я попрошу - это немного еды и питья в дорогу. Но прошу, без алкоголя."
-text_good = " Благодарю тебя, друг. И прощай."
-text_bad = "Это не то, прощай друг."
-item_1 = "meat"
-item_2 = "energy"
-
-[node name="Audio_step" parent="Dialogues/Knight_5" index="2"]
-stream = ExtResource("16_j5jiw")
-
-[node name="Audio_good" parent="Dialogues/Knight_5" index="3"]
-stream = ExtResource("17_s57sv")
-
-[node name="Audio_bad" parent="Dialogues/Knight_5" index="4"]
-stream = ExtResource("18_7bxjp")
-
 [node name="Wizard_5" parent="Dialogues" instance=ExtResource("14_004et")]
 position = Vector2(-318, 40)
 sprite_frames = SubResource("SpriteFrames_1lly5")
@@ -1744,6 +1725,39 @@ volume_db = -5.0
 stream = ExtResource("24_sevhh")
 volume_db = -10.0
 
+[node name="Ork_5" parent="Dialogues" instance=ExtResource("14_004et")]
+position = Vector2(-318, -8)
+sprite_frames = SubResource("SpriteFrames_yr62c")
+text_1 = "ЭТОТ ПРИДУРОК С БОЛЬШОЙ ПАЛКОЙ СКАЗАЛ, ЧТО МОЖЕТ ПАМОЧЬ УЙТИ ОТСЮДАВА. РРРРРР... НЕ НРАВИЦА ОН МНЕ, А ТЕБЕ, ТОРГАШ?"
+txt_1_arm_idle = false
+txt_1_arm_nice = true
+text_2 = "ДУМАЕШЬ? НУ ЛАДНО. ДУМАЮ ТОГДА СТОИТ ПОПРОБОВАТЬ. ЕСЛИ НЕ ПОЛУЧИТСЯ, Я ЕМУ ВРЕЖУ ПО РОЖЕ ХАХАХАХАХА!"
+text_3 = "ЭЙ, СПАСИБА ТЕБЕ ЗА ЕДУ, ДРУГ. И ЗА ПОПИТЬ ТОЖЕ СПАСИБО. КСТАТИ ДАЙ ЕЩЕ ПОПИТЬ ПОЖАЛУСТА, ОБА НАПИТКА... "
+text_good = "НУ ЩАС КАК ВЫБЕРУСЬ, ТАК ДОМА ПИР УСТРОЮ! И СВОИХ БАЛБЕСОВ БРАТЬЕВ ТОЖЕ ПРОУЧУ, ЧТОБ КАБАНОВ НЕ ТЕРЯЛИ. БЫВАЙ БРАТ, Я ТЕБЯ НЕ ЗАБУДУ! "
+text_bad = "ЭХ, НЕ ЭТОГО ХОТЕЛ. ЛАДНО, БЫВАЙ БРАТ, Я ТЕБЯ НЕ ЗАБУДУ!"
+item_1 = "beer"
+item_2 = "energy"
+
+[node name="text_input" parent="Dialogues/Ork_5" index="1"]
+anchor_left = 0.737
+anchor_top = 0.069
+anchor_right = 1.381
+anchor_bottom = 0.618
+offset_left = -470.517
+offset_top = -488.413
+offset_right = -470.521
+offset_bottom = -488.786
+
+[node name="Audio_step" parent="Dialogues/Ork_5" index="2"]
+stream = ExtResource("29_a84f2")
+
+[node name="Audio_good" parent="Dialogues/Ork_5" index="3"]
+stream = ExtResource("30_tye5r")
+volume_db = -5.0
+
+[node name="Audio_bad" parent="Dialogues/Ork_5" index="4"]
+stream = ExtResource("31_g0qo4")
+
 [node name="Elf_5" parent="Dialogues" instance=ExtResource("14_004et")]
 position = Vector2(-318, 48)
 sprite_frames = SubResource("SpriteFrames_3qrd2")
@@ -1773,102 +1787,6 @@ stream = ExtResource("24_f7hqo")
 
 [node name="Audio_bad" parent="Dialogues/Elf_5" index="4"]
 stream = ExtResource("25_swgjl")
-
-[node name="Ork_5" parent="Dialogues" instance=ExtResource("14_004et")]
-position = Vector2(-318, -8)
-sprite_frames = SubResource("SpriteFrames_yr62c")
-text_1 = "ЭТОТ ПРИДУРОК С БОЛЬШОЙ ПАЛКОЙ СКАЗАЛ, ЧТО МОЖЕТ ПАМОЧЬ УЙТИ ОТСЮДАВА. РРРРРР... НЕ НРАВИЦА ОН МНЕ, А ТЕБЕ, ТОРГАШ?"
-txt_1_arm_idle = false
-txt_1_arm_nice = true
-text_2 = "ДУМАЕШЬ? НУ ЛАДНО. ДУМАЮ ТОГДА СТОИТ ПОПРОБОВАТЬ. ЕСЛИ НЕ ПОЛУЧИТСЯ, Я ЕМУ ВРЕЖУ ПО РОЖЕ ХАХАХАХАХА!"
-text_3 = "ЭЙ, СПАСИБА ТЕБЕ ЗА ЕДУ, ДРУГ. И ЗА ПОПИТЬ ТОЖЕ СПАСИБО. КСТАТИ ДАЙ ЕЩЕ ПОПИТЬ ПОЖАЛУСТА, ОБЕ БУТЫЛОЧКИ... "
-text_good = "НУ ЩАС КАК ВЫБЕРУСЬ, ТАК ДОМА ПИР УСТРОЮ! И СВОИХ БАЛБЕСОВ БРАТЬЕВ ТОЖЕ ПРОУЧУ, ЧТОБ КАБАНОВ НЕ ТЕРЯЛИ. БЫВАЙ БРАТ, Я ТЕБЯ НЕ ЗАБУДУ! "
-text_bad = "ЭХ, НЕ ЭТОГО ХОТЕЛ. ЛАДНО, БЫВАЙ БРАТ, Я ТЕБЯ НЕ ЗАБУДУ!"
-item_1 = "beer"
-item_2 = "energy"
-
-[node name="text_input" parent="Dialogues/Ork_5" index="1"]
-anchor_left = 0.737
-anchor_top = 0.069
-anchor_right = 1.381
-anchor_bottom = 0.618
-offset_left = -470.517
-offset_top = -488.413
-offset_right = -470.521
-offset_bottom = -488.786
-
-[node name="Audio_step" parent="Dialogues/Ork_5" index="2"]
-stream = ExtResource("29_a84f2")
-
-[node name="Audio_good" parent="Dialogues/Ork_5" index="3"]
-stream = ExtResource("30_tye5r")
-volume_db = -5.0
-
-[node name="Audio_bad" parent="Dialogues/Ork_5" index="4"]
-stream = ExtResource("31_g0qo4")
-
-[node name="Bandit_5" parent="Dialogues" instance=ExtResource("14_004et")]
-position = Vector2(-318, 47)
-sprite_frames = SubResource("SpriteFrames_3h6vo")
-text_1 = "Ухх... Ты чертов бык. Из-за тебя я теперь угожу в темницу черт возьми! Мог бы просто мне помочь, а не корчить из себя правильного. И я бы спокойно смотался отсюда. "
-text_2 = "А так, отвлекся на секунду, как меня эта проклятая девка треснула. Обещаю тебе, в следующий раз когда мы встретимся... Ты так легко не отделаешься!"
-text_3 = "Дай хоть напьюсь с горя..."
-text_good = "Прощай."
-text_bad = "Жаль. Прощай."
-item_1 = "beer"
-
-[node name="text_input" parent="Dialogues/Bandit_5" index="1"]
-anchor_left = 0.708
-anchor_top = 0.036
-anchor_right = 1.452
-anchor_bottom = 0.608
-offset_left = -376.832
-offset_top = -352.38
-offset_right = -376.808
-offset_bottom = -352.64
-
-[node name="Audio_step" parent="Dialogues/Bandit_5" index="2"]
-stream = ExtResource("41_20dj4")
-volume_db = 5.0
-
-[node name="Audio_good" parent="Dialogues/Bandit_5" index="3"]
-stream = ExtResource("42_b82j5")
-volume_db = -5.0
-
-[node name="Audio_bad" parent="Dialogues/Bandit_5" index="4"]
-stream = ExtResource("43_aviev")
-volume_db = -5.0
-
-[node name="Skeleton_5" parent="Dialogues" instance=ExtResource("14_004et")]
-position = Vector2(-318, -2)
-sprite_frames = SubResource("SpriteFrames_sl8oo")
-text_1 = "Фух, ну и денек, да? Я думаю нам уже пора закругляться, здоровяк. Встретил я тут одного коротышку, славный малый."
-text_2 = "Я ненароком распугал его друзей, когда заходил сюда, хехе... Ну да ладно, он вроде не обиделся. Насыщенная выдалась смена да? "
-txt_2_arm_idle = false
-txt_2_arm_nice = true
-text_3 = "И не говори. Ну ладно, спасибо что уделил мне время. И слушал мои байки. Пора мне идти дальше гулять по просторам этого мира."
-text_4 = "А тебе бы я настоял отдохнуть, ты это заслужил, предприниматель хаха. Дай мне еще сувенирчик на дорогу"
-text_good = "Ну ладно, все, я пошел. Не забывай меня когда высоко взлетишь!"
-skeleton = true
-
-[node name="text_input" parent="Dialogues/Skeleton_5" index="1"]
-anchor_left = 0.735
-anchor_top = 0.0
-anchor_right = 1.436
-anchor_bottom = 0.594
-offset_left = -408.495
-offset_top = -416.0
-offset_right = -408.212
-offset_bottom = -423.118
-
-[node name="Audio_step" parent="Dialogues/Skeleton_5" index="2"]
-stream = ExtResource("34_jar8y")
-
-[node name="Audio_good" parent="Dialogues/Skeleton_5" index="3"]
-stream = ExtResource("34_jar8y")
-
-[node name="Audio_bad" parent="Dialogues/Skeleton_5" index="4"]
-stream = ExtResource("34_jar8y")
 
 [node name="Dwarf_5" parent="Dialogues" instance=ExtResource("14_004et")]
 unique_name_in_owner = true
@@ -1904,6 +1822,57 @@ volume_db = -5.0
 stream = ExtResource("21_yyqsm")
 volume_db = -5.0
 
+[node name="Knight_5" parent="Dialogues" instance=ExtResource("14_004et")]
+position = Vector2(-318, -10)
+text_1 = "Минотавр! Я рад сообщить тебе, что наш путь подошел к концу! Я нашел ее, нашу дражайшую принцессу. Она немного... изменилась, но все так же прекрасна."
+text_2 = "А еще она сразила того поганца, который ее утащил. Сама! Одолела его, а когда я нашел ее, он уже был связан. Я горд служить такой деве как она."
+text_3 = "А что до тебя. Я пришел склонить колено пред тобой, ты выручил нас обоих! Последнее что я попрошу - это немного еды и питья в дорогу. Но прошу, без алкоголя."
+text_good = " Благодарю тебя, друг. И прощай."
+text_bad = "Это не то, прощай друг."
+item_1 = "meat"
+item_2 = "energy"
+
+[node name="Audio_step" parent="Dialogues/Knight_5" index="2"]
+stream = ExtResource("16_j5jiw")
+
+[node name="Audio_good" parent="Dialogues/Knight_5" index="3"]
+stream = ExtResource("17_s57sv")
+
+[node name="Audio_bad" parent="Dialogues/Knight_5" index="4"]
+stream = ExtResource("18_7bxjp")
+
+[node name="Bandit_5" parent="Dialogues" instance=ExtResource("14_004et")]
+position = Vector2(-318, 47)
+sprite_frames = SubResource("SpriteFrames_3h6vo")
+text_1 = "Ухх... Ты чертов бык. Из-за тебя я теперь угожу в темницу черт возьми! Мог бы просто мне помочь, а не корчить из себя правильного. И я бы спокойно смотался отсюда. "
+text_2 = "А так, отвлекся на секунду, как меня эта проклятая девка треснула. Обещаю тебе, в следующий раз когда мы встретимся... Ты так легко не отделаешься!"
+text_3 = "Дай хоть напьюсь с горя..."
+text_good = "Прощай."
+text_bad = "Жаль. Прощай."
+item_1 = "beer"
+
+[node name="text_input" parent="Dialogues/Bandit_5" index="1"]
+anchor_left = 0.708
+anchor_top = 0.036
+anchor_right = 1.452
+anchor_bottom = 0.608
+offset_left = -376.832
+offset_top = -352.38
+offset_right = -376.808
+offset_bottom = -352.64
+
+[node name="Audio_step" parent="Dialogues/Bandit_5" index="2"]
+stream = ExtResource("41_20dj4")
+volume_db = 5.0
+
+[node name="Audio_good" parent="Dialogues/Bandit_5" index="3"]
+stream = ExtResource("42_b82j5")
+volume_db = -5.0
+
+[node name="Audio_bad" parent="Dialogues/Bandit_5" index="4"]
+stream = ExtResource("43_aviev")
+volume_db = -5.0
+
 [node name="Princess_5" parent="Dialogues" instance=ExtResource("14_004et")]
 position = Vector2(-318, 61)
 sprite_frames = SubResource("SpriteFrames_7gxyu")
@@ -1935,6 +1904,37 @@ volume_db = -2.0
 stream = ExtResource("24_ga80r")
 volume_db = 2.0
 
+[node name="Skeleton_5" parent="Dialogues" instance=ExtResource("14_004et")]
+position = Vector2(-318, -2)
+sprite_frames = SubResource("SpriteFrames_sl8oo")
+text_1 = "Фух, ну и денек, да? Я думаю нам уже пора закругляться, здоровяк. Встретил я тут одного коротышку, славный малый."
+text_2 = "Я ненароком распугал его друзей, когда заходил сюда, хехе... Ну да ладно, он вроде не обиделся. Насыщенная выдалась смена да? "
+txt_2_arm_idle = false
+txt_2_arm_nice = true
+text_3 = "И не говори. Ну ладно, спасибо что уделил мне время. И слушал мои байки. Пора мне идти дальше гулять по просторам этого мира."
+text_4 = "А тебе бы я настоял отдохнуть, ты это заслужил, предприниматель хаха. Дай мне еще сувенирчик на дорогу"
+text_good = "Ну ладно, все, я пошел. Не забывай меня когда высоко взлетишь!"
+skeleton = true
+
+[node name="text_input" parent="Dialogues/Skeleton_5" index="1"]
+anchor_left = 0.735
+anchor_top = 0.0
+anchor_right = 1.436
+anchor_bottom = 0.594
+offset_left = -408.495
+offset_top = -416.0
+offset_right = -408.212
+offset_bottom = -423.118
+
+[node name="Audio_step" parent="Dialogues/Skeleton_5" index="2"]
+stream = ExtResource("34_jar8y")
+
+[node name="Audio_good" parent="Dialogues/Skeleton_5" index="3"]
+stream = ExtResource("34_jar8y")
+
+[node name="Audio_bad" parent="Dialogues/Skeleton_5" index="4"]
+stream = ExtResource("34_jar8y")
+
 [node name="Kiosk" type="Sprite2D" parent="."]
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("18_fqqo3")
@@ -1960,10 +1960,10 @@ max_distance = 1200.0
 
 [node name="Gold" type="Label" parent="Kiosk"]
 unique_name_in_owner = true
-offset_left = -693.0
-offset_top = -611.001
-offset_right = -441.0
-offset_bottom = -556.001
+offset_left = -695.667
+offset_top = -627.001
+offset_right = -443.667
+offset_bottom = -572.001
 theme_override_colors/font_color = Color(0.235294, 0.156863, 0.109804, 1)
 theme_override_fonts/font = ExtResource("44_205ck")
 theme_override_font_sizes/font_size = 40
@@ -2003,11 +2003,11 @@ anchor_left = 0.232
 anchor_top = 0.117
 anchor_right = 0.325
 anchor_bottom = 0.157
-offset_left = -1280.59
+offset_left = -1248.59
 offset_top = -720.48
-offset_right = -1219.67
+offset_right = -1187.67
 offset_bottom = -631.08
-scale = Vector2(0.8, 0.4)
+scale = Vector2(0.6, 0.4)
 focus_mode = 0
 disabled = true
 texture_normal = ExtResource("64_mm6wd")
@@ -2097,7 +2097,7 @@ position = Vector2(160, 288)
 texture = ExtResource("5_rahx3")
 name_item = "energy"
 texture_area = ExtResource("6_f21tu")
-text_description = "ЭНЕРГЕТИК"
+text_description = "ЗЕЛЬЕ ЭНЕРГИИ: Мгновенно освежает и бодрит. Очень подходит уставшим после драки воинам или вымотавшимся после дороги путникам."
 
 [node name="Audio_item" parent="Items/Energy" index="3"]
 stream = ExtResource("34_mb5wx")
@@ -2107,7 +2107,7 @@ position = Vector2(352.375, 324.9)
 texture = ExtResource("3_30tcc")
 name_item = "meat"
 texture_area = ExtResource("4_05ukm")
-text_description = "МЯСО"
+text_description = "МЯСО: Кусок кабаньего мяса. Отлично насыщает и собирает взгляды голодных орков. На вкус довольно неплохо."
 
 [node name="Audio_item" parent="Items/Meat" index="3"]
 stream = ExtResource("36_x2vhp")
@@ -2118,7 +2118,7 @@ position = Vector2(552.95, 302.2)
 texture = ExtResource("3_wjluu")
 name_item = "beer"
 texture_area = ExtResource("4_j3s7l")
-text_description = "ПИВО"
+text_description = "ЭЛЬ: Сладкий и вкусный. Поднимает настроение и начинает драки в тавернах. Особо любимый напиток у гномов."
 
 [node name="Audio_item" parent="Items/Beer" index="3"]
 stream = ExtResource("38_yxdbn")
@@ -2130,7 +2130,7 @@ position = Vector2(803, -315)
 texture = ExtResource("13_1ttdh")
 name_item = "fire"
 texture_area = ExtResource("14_b3nl8")
-text_description = "СВИТОК ОГНЯ"
+text_description = "СВИТОК ОГНЯ: Свиток с заклинанием, при прочтении которого создается волшебное пламя, подчиненное хозяину. Может согреть, осветить дорогу или обжечь."
 short_arm = false
 
 [node name="Audio_item" parent="Items/Scroll_of_fire" index="3"]
@@ -2142,7 +2142,7 @@ position = Vector2(735, 180)
 texture = ExtResource("15_5oofi")
 name_item = "pillow"
 texture_area = ExtResource("16_a3tep")
-text_description = "ПОДУШКА"
+text_description = "ПОДУШКА: Мягкая большая подушка с гусиными перьями. Отлично подойдет для отдыха и сна, а также ей можно что-нибудь подпереть."
 short_arm = false
 
 [node name="Audio_item" parent="Items/Pillow" index="3"]
@@ -2154,7 +2154,7 @@ position = Vector2(628.1, -93.75)
 texture = ExtResource("9_ksmgt")
 name_item = "luck"
 texture_area = ExtResource("10_1yw8s")
-text_description = "ПОДКОВА УДАЧИ"
+text_description = "ПОДКОВА УДАЧИ: Делает судьбу более дружелюбной к хозяину и ведет его по верному пути. Увеличивает шансы найти что-то полезное."
 short_arm = false
 
 [node name="Audio_item" parent="Items/Horseshoe" index="3"]
@@ -2165,7 +2165,7 @@ position = Vector2(798.85, -96.5)
 texture = ExtResource("11_17cvt")
 name_item = "protection"
 texture_area = ExtResource("12_ufqll")
-text_description = "ЗАЩИТНАЯ РУНА"
+text_description = "РУНА ЗАЩИТЫ: Если носить с собой, то создает непроницаемый магический щит вокруг владельца. Хватает надолго."
 short_arm = false
 
 [node name="Audio_item" parent="Items/Rune" index="3"]
@@ -2450,14 +2450,14 @@ color_ramp = SubResource("Gradient_rt0n7")
 [editable path="Dialogues/Skeleton_4"]
 [editable path="Dialogues/Dwarf_4"]
 [editable path="Dialogues/Princess_4"]
-[editable path="Dialogues/Knight_5"]
 [editable path="Dialogues/Wizard_5"]
-[editable path="Dialogues/Elf_5"]
 [editable path="Dialogues/Ork_5"]
-[editable path="Dialogues/Bandit_5"]
-[editable path="Dialogues/Skeleton_5"]
+[editable path="Dialogues/Elf_5"]
 [editable path="Dialogues/Dwarf_5"]
+[editable path="Dialogues/Knight_5"]
+[editable path="Dialogues/Bandit_5"]
 [editable path="Dialogues/Princess_5"]
+[editable path="Dialogues/Skeleton_5"]
 [editable path="Items/Energy"]
 [editable path="Items/Meat"]
 [editable path="Items/Beer"]

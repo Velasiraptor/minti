@@ -30,7 +30,7 @@ extends Node2D
 
 var full_hp = 3
 
-var gold_start = 960
+var gold_start = 0
 
 var finish_game = false
 

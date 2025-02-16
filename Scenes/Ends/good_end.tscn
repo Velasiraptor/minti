@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://b6jfh4kd25uf3"]
+[gd_scene load_steps=3 format=3 uid="uid://b6jfh4kd25uf3"]
 
 [ext_resource type="Texture2D" uid="uid://c37kh3fqiug1f" path="res://Sprites/Ends/good_end.png" id="1_pqu65"]
+[ext_resource type="AudioStream" uid="uid://cjyau07101k1p" path="res://Music/good_end.mp3" id="2_k5737"]
 
 [node name="good_end" type="Node2D"]
 
@@ -9,3 +10,7 @@
 [node name="GoodEnd" type="Sprite2D" parent="."]
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("1_pqu65")
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_k5737")
+autoplay = true

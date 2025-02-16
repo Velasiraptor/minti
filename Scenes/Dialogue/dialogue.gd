@@ -46,6 +46,8 @@ extends AnimatedSprite2D
 
 @onready var timer_talk = %Timer_talk
 
+@onready var audio_bell = %Audio_bell
+
 
 var actual_text = ""
 var active_character := false
@@ -211,12 +213,16 @@ func active_button_shop():
 	if active_character:
 		if last_text == "txt2" and text_input.visible_ratio == 1 and actual_text == text_2:
 			get_tree().call_group("Table", "on_button_shop")
+			audio_bell.play()
 		elif last_text == "txt3" and text_input.visible_ratio == 1 and actual_text == text_3:
 			get_tree().call_group("Table", "on_button_shop")
+			audio_bell.play()
 		elif last_text == "txt4" and text_input.visible_ratio == 1 and actual_text == text_4:
 			get_tree().call_group("Table", "on_button_shop")
+			audio_bell.play()
 		elif last_text == "txt5" and text_input.visible_ratio == 1 and actual_text == text_5:
 			get_tree().call_group("Table", "on_button_shop")
+			audio_bell.play()
 
 
 func choice_item():

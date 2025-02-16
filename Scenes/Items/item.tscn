@@ -21,7 +21,6 @@ unique_name_in_owner = true
 
 [node name="Description" type="Sprite2D" parent="."]
 unique_name_in_owner = true
-visible = false
 z_index = 1
 position = Vector2(-228.333, -105)
 texture = ExtResource("2_1mey5")
@@ -29,18 +28,18 @@ texture = ExtResource("2_1mey5")
 [node name="decr_Label" type="Label" parent="Description"]
 unique_name_in_owner = true
 anchors_preset = -1
-anchor_left = 0.055
-anchor_top = 0.102
-anchor_right = 0.939
-anchor_bottom = 0.868
-offset_left = -168.535
-offset_top = -85.442
-offset_right = -168.443
-offset_bottom = -85.428
+anchor_left = 0.01
+anchor_top = 0.032
+anchor_right = 0.987
+anchor_bottom = 0.968
+offset_left = -168.37
+offset_top = -85.472
+offset_right = -168.619
+offset_bottom = -85.528
 theme_override_colors/font_color = Color(0.278431, 0.203922, 0.101961, 1)
 theme_override_fonts/font = ExtResource("3_y4sv5")
-theme_override_font_sizes/font_size = 32
-autowrap_mode = 1
+theme_override_font_sizes/font_size = 24
+autowrap_mode = 2
 
 [node name="Audio_item" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
