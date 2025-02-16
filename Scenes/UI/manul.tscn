@@ -1,0 +1,120 @@
+[gd_scene load_steps=8 format=3 uid="uid://bbdro1vhnyjw8"]
+
+[ext_resource type="Script" path="res://Scenes/UI/manul.gd" id="1_06lb6"]
+[ext_resource type="Texture2D" uid="uid://d2lagchgvruic" path="res://Sprites/UI/Windows.png" id="1_j35yq"]
+[ext_resource type="FontFile" uid="uid://2d7kvrvatcea" path="res://Fonts/DS_Greece.ttf" id="2_j7ru5"]
+[ext_resource type="Texture2D" uid="uid://bfdchs0dm0eu" path="res://Sprites/UI/Button_play_exit.png" id="3_gv0kt"]
+[ext_resource type="Texture2D" uid="uid://dw5bwc2mja1xw" path="res://Sprites/UI/Button_play_exit_hover.png" id="4_w0ejd"]
+[ext_resource type="Texture2D" uid="uid://csqt7jkrxs2me" path="res://Sprites/hp/full_hp.png" id="5_xrv7m"]
+[ext_resource type="AudioStream" uid="uid://uacpaoek2j0k" path="res://Sounds/menu_button.mp3" id="7_6nbug"]
+
+[node name="Manul" type="Control"]
+z_index = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_06lb6")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 298.0
+offset_top = 172.0
+offset_right = 938.0
+offset_bottom = 532.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_j35yq")
+stretch_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="TextureRect"]
+show_behind_parent = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.233
+anchor_top = -0.241
+anchor_right = 1.275
+anchor_bottom = 1.286
+offset_left = -15.52
+offset_top = -30.96
+offset_right = 15.9998
+offset_bottom = 20.16
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.45098)
+
+[node name="Label" type="Label" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -720.0
+offset_top = 230.0
+offset_right = 788.0
+offset_bottom = 1169.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.556863, 0.290196, 0.105882, 1)
+theme_override_fonts/font = ExtResource("2_j7ru5")
+theme_override_font_sizes/font_size = 60
+text = "- Продавайте предметы посетителям и копите драхмы.
+
+- Постарайтесь продавать верные предметы, иначе Минотавр будет терять настроение.
+
+- Набрав достаточное количество монет, возможно завершить смену по-раньше, но лучше досмотреть историю посетителей до конца!
+
+- Нажимайте 'пробел' для пропуска 
+диалога"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Start_game" type="TextureButton" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -918.0
+offset_top = 228.0
+offset_right = -553.5
+offset_bottom = 499.5
+grow_horizontal = 0
+grow_vertical = 2
+focus_mode = 0
+texture_normal = ExtResource("3_gv0kt")
+texture_hover = ExtResource("4_w0ejd")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="TextureRect/Start_game"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.556863, 0.290196, 0.105882, 1)
+theme_override_fonts/font = ExtResource("2_j7ru5")
+theme_override_font_sizes/font_size = 70
+text = "Закрыть"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FullHp" type="Sprite2D" parent="TextureRect"]
+position = Vector2(1552, 582)
+texture = ExtResource("5_xrv7m")
+
+[node name="Audio_UI" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("7_6nbug")
+volume_db = -30.0
+
+[connection signal="mouse_entered" from="TextureRect/Start_game" to="." method="_on_start_game_mouse_entered"]
+[connection signal="pressed" from="TextureRect/Start_game" to="." method="_on_start_game_pressed"]

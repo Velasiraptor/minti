@@ -1,0 +1,146 @@
+[gd_scene load_steps=7 format=3 uid="uid://ce31cyvfxchja"]
+
+[ext_resource type="Texture2D" uid="uid://d2lagchgvruic" path="res://Sprites/UI/Windows.png" id="1_g10xc"]
+[ext_resource type="Script" path="res://Scenes/UI/exit_window.gd" id="1_hm85l"]
+[ext_resource type="FontFile" uid="uid://2d7kvrvatcea" path="res://Fonts/DS_Greece.ttf" id="3_strjh"]
+[ext_resource type="Texture2D" uid="uid://bfdchs0dm0eu" path="res://Sprites/UI/Button_play_exit.png" id="4_48tg1"]
+[ext_resource type="Texture2D" uid="uid://dw5bwc2mja1xw" path="res://Sprites/UI/Button_play_exit_hover.png" id="5_hacna"]
+[ext_resource type="AudioStream" uid="uid://uacpaoek2j0k" path="res://Sounds/menu_button.mp3" id="6_stwof"]
+
+[node name="Exit_window" type="Control"]
+z_index = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hm85l")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 298.0
+offset_top = 172.0
+offset_right = 938.0
+offset_bottom = 532.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_g10xc")
+stretch_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="TextureRect"]
+show_behind_parent = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.233
+anchor_top = -0.241
+anchor_right = 1.275
+anchor_bottom = 1.286
+offset_left = -15.52
+offset_top = -30.96
+offset_right = 15.9998
+offset_bottom = 20.16
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.45098)
+
+[node name="Label" type="Label" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -691.5
+offset_top = 324.0
+offset_right = 691.5
+offset_bottom = 447.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.556863, 0.290196, 0.105882, 1)
+theme_override_fonts/font = ExtResource("3_strjh")
+theme_override_font_sizes/font_size = 100
+text = "ВЫ УВЕРЕНЫ ЧТО ХОТИТЕ ВЫЙТИ?
+Прогресс не сохранится"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Back" type="TextureButton" parent="TextureRect"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -1839.17
+offset_top = -12.75
+offset_right = -1474.67
+offset_bottom = 258.75
+grow_horizontal = 0
+grow_vertical = 2
+focus_mode = 0
+texture_normal = ExtResource("4_48tg1")
+texture_hover = ExtResource("5_hacna")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="TextureRect/Back"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.556863, 0.290196, 0.105882, 1)
+theme_override_fonts/font = ExtResource("3_strjh")
+theme_override_font_sizes/font_size = 70
+text = "НЕТ"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Exit" type="TextureButton" parent="TextureRect"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -1089.17
+offset_top = -12.75
+offset_right = -724.667
+offset_bottom = 258.75
+grow_horizontal = 0
+grow_vertical = 2
+focus_mode = 0
+texture_normal = ExtResource("4_48tg1")
+texture_hover = ExtResource("5_hacna")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="TextureRect/Exit"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.556863, 0.290196, 0.105882, 1)
+theme_override_fonts/font = ExtResource("3_strjh")
+theme_override_font_sizes/font_size = 70
+text = "ДА"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Audio_UI" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("6_stwof")
+volume_db = -30.0
+
+[connection signal="mouse_entered" from="TextureRect/Back" to="." method="_on_back_mouse_entered"]
+[connection signal="pressed" from="TextureRect/Back" to="." method="_on_back_pressed"]
+[connection signal="mouse_entered" from="TextureRect/Exit" to="." method="_on_exit_mouse_entered"]
+[connection signal="pressed" from="TextureRect/Exit" to="." method="_on_exit_pressed"]

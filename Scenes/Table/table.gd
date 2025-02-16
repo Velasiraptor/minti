@@ -141,8 +141,9 @@ func choice_item(item_1, item_2, skeleton, thief):
 	else:
 		get_tree().call_group("Dialogue", "bad_finish")
 		off_button_shop()
-		await get_tree().create_timer(1.0).timeout
+		await get_tree().create_timer(1.5).timeout
 		audio_moo.play()
+		await get_tree().create_timer(0.5).timeout
 		get_tree().call_group("Game", "minus_hp")
 	
 	if thief:

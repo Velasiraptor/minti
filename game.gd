@@ -28,6 +28,10 @@ extends Node2D
 
 @onready var button_good = %Button_good
 
+@onready var exit_window = %Exit_window
+@onready var end_or_no = %end_or_no
+
+
 var full_hp = 3
 
 var gold_start = 0
@@ -36,20 +40,21 @@ var finish_game = false
 
 var count_dialogue = 0
 
-func _ready():
+func start_game():
+	exit_window.active_exit_menu_true()
 	count_dialogue = dialogues.get_child_count()
-	await get_tree().create_timer(10.0).timeout
+	await get_tree().create_timer(8.0).timeout
 	dialogues.get_child(actual_dialogues).ready_dialogue()
 	actual_dialogues += 1
 
 func next_dialogue(): 
 	if finish_game == false:
 		if actual_dialogues != count_dialogue - 1:
-			await get_tree().create_timer(5.0).timeout
+			await get_tree().create_timer(4.0).timeout
 			dialogues.get_child(actual_dialogues).ready_dialogue()
 			actual_dialogues += 1
 		else:
-			await get_tree().create_timer(5.0).timeout
+			await get_tree().create_timer(4.0).timeout
 			dialogues.get_child(actual_dialogues).ready_dialogue()
 			finish_game = true
 
@@ -104,4 +109,4 @@ func End():
 
 
 func _on_button_good_pressed():
-	get_tree().change_scene_to_file("res://Scenes/Ends/good_end.tscn")
+	end_or_no.visible = true

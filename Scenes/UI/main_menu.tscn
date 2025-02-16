@@ -1,0 +1,254 @@
+[gd_scene load_steps=24 format=3 uid="uid://cj1b61vrgixrp"]
+
+[ext_resource type="Script" path="res://Scenes/UI/main_menu.gd" id="1_p76jm"]
+[ext_resource type="Texture2D" uid="uid://def0dun0ef8l2" path="res://Sprites/UI/Main_menu.png" id="1_pmq5s"]
+[ext_resource type="Texture2D" uid="uid://dmkiyxr8egva5" path="res://Sprites/UI/Logo.png" id="2_0xt4m"]
+[ext_resource type="Texture2D" uid="uid://b4rnlwco3mroe" path="res://Sprites/UI/Main_menu_back.png" id="2_uel5a"]
+[ext_resource type="Texture2D" uid="uid://bfdchs0dm0eu" path="res://Sprites/UI/Button_play_exit.png" id="5_7fu3q"]
+[ext_resource type="Texture2D" uid="uid://dw5bwc2mja1xw" path="res://Sprites/UI/Button_play_exit_hover.png" id="6_6ijji"]
+[ext_resource type="FontFile" uid="uid://2d7kvrvatcea" path="res://Fonts/DS_Greece.ttf" id="7_i70is"]
+[ext_resource type="Texture2D" uid="uid://d0amdchhp80h5" path="res://Sprites/Background/light.png" id="9_c0uwm"]
+[ext_resource type="AudioStream" uid="uid://uacpaoek2j0k" path="res://Sounds/menu_button.mp3" id="9_sfmqj"]
+[ext_resource type="Texture2D" uid="uid://begdq32a1wfg1" path="res://Sprites/Fire/fire_7.png" id="10_74jnq"]
+[ext_resource type="Texture2D" uid="uid://cd1rpygkabxn6" path="res://Sprites/Fire/fire_0.png" id="11_pe7d0"]
+[ext_resource type="Texture2D" uid="uid://504mo2nt4kpa" path="res://Sprites/Fire/fire_1.png" id="12_gifdm"]
+[ext_resource type="Texture2D" uid="uid://buu3p85myssnk" path="res://Sprites/Fire/fire_2.png" id="13_oa3pc"]
+[ext_resource type="Shader" path="res://Shaders/Blur.gdshader" id="13_tx7ur"]
+[ext_resource type="Texture2D" uid="uid://bqrm3lo2jyuw6" path="res://icon.svg" id="14_deh6l"]
+[ext_resource type="Texture2D" uid="uid://csr3qmf26ax85" path="res://Sprites/Fire/fire_3.png" id="14_ymw4j"]
+[ext_resource type="Texture2D" uid="uid://ca5odmgeonlqy" path="res://Sprites/Fire/fire_4.png" id="15_esxqg"]
+[ext_resource type="Texture2D" uid="uid://1d4tjad46et5" path="res://Sprites/Fire/fire_5.png" id="16_ypqm7"]
+[ext_resource type="Texture2D" uid="uid://ckkd5xwgp2j2s" path="res://Sprites/Fire/fire_6.png" id="17_vsh4c"]
+[ext_resource type="Texture2D" uid="uid://i7q8qfgs12" path="res://Sprites/Background/torch.png" id="18_0dw42"]
+[ext_resource type="AudioStream" uid="uid://b833ai76nxkt4" path="res://Sounds/fire_sound.mp3" id="21_mjngq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jgo4w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_74jnq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_pe7d0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_gifdm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_oa3pc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_ymw4j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_esxqg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_ypqm7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_vsh4c")
+}],
+"loop": true,
+"name": &"fire",
+"speed": 10.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wb4c8"]
+shader = ExtResource("13_tx7ur")
+shader_parameter/lod = 0.7
+
+[node name="Main_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_p76jm")
+
+[node name="Back" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_uel5a")
+expand_mode = 1
+
+[node name="Light" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.772549)
+position = Vector2(218, 641.7)
+scale = Vector2(3.87786, 5.43632)
+texture = ExtResource("9_c0uwm")
+
+[node name="fire" type="AnimatedSprite2D" parent="."]
+position = Vector2(220, 471.7)
+scale = Vector2(1.3, 1.3)
+sprite_frames = SubResource("SpriteFrames_jgo4w")
+animation = &"fire"
+autoplay = "fire"
+
+[node name="Torch" type="Sprite2D" parent="."]
+position = Vector2(228, 865.7)
+scale = Vector2(3.8, 3.8)
+texture = ExtResource("18_0dw42")
+
+[node name="Light2" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.772549)
+position = Vector2(1693.01, 643.752)
+rotation = 3.14159
+scale = Vector2(3.878, -5.43632)
+texture = ExtResource("9_c0uwm")
+
+[node name="fire2" type="AnimatedSprite2D" parent="."]
+position = Vector2(1718.01, 478.7)
+rotation = 3.14159
+scale = Vector2(1.3, -1.3)
+sprite_frames = SubResource("SpriteFrames_jgo4w")
+animation = &"fire"
+autoplay = "fire"
+
+[node name="Torch2" type="Sprite2D" parent="."]
+position = Vector2(1703.01, 865.752)
+rotation = 3.14159
+scale = Vector2(3.878, -3.8)
+texture = ExtResource("18_0dw42")
+
+[node name="Blur" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_wb4c8")
+layout_mode = 0
+offset_left = -542.0
+offset_top = -302.0
+offset_right = 2263.0
+offset_bottom = 1365.0
+texture = ExtResource("14_deh6l")
+
+[node name="main_menu" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 394.0
+offset_top = 198.0
+offset_right = 394.0
+offset_bottom = 198.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_pmq5s")
+expand_mode = 1
+
+[node name="Logo" type="TextureRect" parent="main_menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -673.5
+offset_top = -336.333
+offset_right = 1083.5
+offset_bottom = 19.6667
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.75, 0.75)
+size_flags_horizontal = 4
+texture = ExtResource("2_0xt4m")
+
+[node name="Control" type="Control" parent="main_menu"]
+layout_mode = 2
+anchors_preset = 0
+offset_left = 133.167
+offset_top = 570.333
+offset_right = 1890.17
+offset_bottom = 570.333
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Play" type="TextureButton" parent="main_menu/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -447.583
+offset_top = -12.75
+offset_right = -83.0831
+offset_bottom = 258.75
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("5_7fu3q")
+texture_hover = ExtResource("6_6ijji")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="main_menu/Control/Play"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.556863, 0.290196, 0.105882, 1)
+theme_override_fonts/font = ExtResource("7_i70is")
+theme_override_font_sizes/font_size = 70
+text = "ИГРАТЬ"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Exit" type="TextureButton" parent="main_menu/Control"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -933.166
+offset_top = -12.75
+offset_right = -568.666
+offset_bottom = 258.75
+grow_horizontal = 0
+grow_vertical = 2
+texture_normal = ExtResource("5_7fu3q")
+texture_hover = ExtResource("6_6ijji")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="main_menu/Control/Exit"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.556863, 0.290196, 0.105882, 1)
+theme_override_fonts/font = ExtResource("7_i70is")
+theme_override_font_sizes/font_size = 70
+text = "ВЫХОД"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Audio_UI" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("9_sfmqj")
+volume_db = -30.0
+
+[node name="Audio_fire" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(227, 695)
+stream = ExtResource("21_mjngq")
+autoplay = true
+max_distance = 1200.0
+
+[node name="Audio_fire2" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(1717, 711)
+stream = ExtResource("21_mjngq")
+autoplay = true
+max_distance = 1200.0
+
+[connection signal="mouse_entered" from="main_menu/Control/Play" to="." method="_on_play_mouse_entered"]
+[connection signal="pressed" from="main_menu/Control/Play" to="." method="_on_play_pressed"]
+[connection signal="mouse_entered" from="main_menu/Control/Exit" to="." method="_on_exit_mouse_entered"]
+[connection signal="pressed" from="main_menu/Control/Exit" to="." method="_on_exit_pressed"]

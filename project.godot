@@ -10,21 +10,23 @@ config_version=5
 
 [application]
 
-config/name="Jam"
-run/main_scene="res://game.tscn"
+config/name="Лавка минотавра"
+run/main_scene="res://Scenes/UI/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(0, 0, 0, 1)
+config/icon="res://Sprites/UI/icon_mini.png"
+config/windows_native_icon="res://Sprites/UI/icon_mini.ico"
+boot_splash/minimum_display_time=3000
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/mode=4
-window/size/always_on_top=true
 window/size/window_width_override=1152
 window/size/window_height_override=648
 window/stretch/mode="viewport"
-window/stretch/aspect="expand"
+mouse_cursor/custom_image="res://Sprites/Cursor.png"
 
 [input]
 

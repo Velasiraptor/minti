@@ -1,9 +1,221 @@
-[gd_scene load_steps=3 format=3 uid="uid://b6jfh4kd25uf3"]
+[gd_scene load_steps=11 format=3 uid="uid://b6jfh4kd25uf3"]
 
 [ext_resource type="Texture2D" uid="uid://c37kh3fqiug1f" path="res://Sprites/Ends/good_end.png" id="1_pqu65"]
+[ext_resource type="Script" path="res://Scenes/Ends/good_end.gd" id="1_uetqe"]
 [ext_resource type="AudioStream" uid="uid://cjyau07101k1p" path="res://Music/good_end.mp3" id="2_k5737"]
+[ext_resource type="FontFile" uid="uid://2d7kvrvatcea" path="res://Fonts/DS_Greece.ttf" id="3_3j3tq"]
+
+[sub_resource type="Animation" id="Animation_8vx12"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_r6k7g"]
+resource_name = "new_animation"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bkbf3"]
+_data = {
+"RESET": SubResource("Animation_8vx12"),
+"new_animation": SubResource("Animation_r6k7g")
+}
+
+[sub_resource type="Animation" id="Animation_mvcf8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label_artist:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label_programmer:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label_narrative:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Label_artist:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Label_programmer:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Label_narrative:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_lhp4l"]
+resource_name = "titles"
+length = 11.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label_artist:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label_programmer:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label_narrative:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Label_artist:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(6, 6.2, 6.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.2, 1.2), Vector2(1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Label_programmer:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(8, 8.2, 8.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.2, 1.2), Vector2(1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Label_narrative:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(10, 10.2, 10.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.2, 1.2), Vector2(1, 1)]
+}
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("..")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(11),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"active_space"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5mi6k"]
+_data = {
+"RESET": SubResource("Animation_mvcf8"),
+"titles": SubResource("Animation_lhp4l")
+}
 
 [node name="good_end" type="Node2D"]
+script = ExtResource("1_uetqe")
 
 [node name="Camera" type="Camera2D" parent="."]
 
@@ -13,4 +225,211 @@ texture = ExtResource("1_pqu65")
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_k5737")
+volume_db = -5.0
 autoplay = true
+
+[node name="Label" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -541.0
+offset_top = 408.5
+offset_right = 541.0
+offset_bottom = 495.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.329022, 0.160954, 0.0442569, 1)
+theme_override_colors/font_outline_color = Color(0.733333, 0.545098, 0.364706, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("3_3j3tq")
+theme_override_font_sizes/font_size = 70
+text = "НАЖМИТЕ НА 'ПРОБЕЛ' для выхода"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="Label"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.152941, 0.152941, 0.152941, 0.8)
+
+[node name="Animation_space" type="AnimationPlayer" parent="Label"]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_bkbf3")
+}
+
+[node name="titles" type="Node2D" parent="."]
+
+[node name="Label_artist" type="Label" parent="titles"]
+visible = false
+modulate = Color(1, 1, 1, 0.986667)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -912.0
+offset_top = -485.0
+offset_right = -101.0
+offset_bottom = -398.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.329022, 0.160954, 0.0442569, 1)
+theme_override_colors/font_outline_color = Color(0.733333, 0.545098, 0.364706, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("3_3j3tq")
+theme_override_font_sizes/font_size = 70
+text = "художник и аниматор:"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="titles/Label_artist"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 96.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.152941, 0.152941, 0.152941, 0.478431)
+
+[node name="Label_artist_name" type="Label" parent="titles/Label_artist"]
+modulate = Color(1, 1, 1, 0.986667)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 89.0
+offset_right = -5.0
+offset_bottom = 93.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.422173, 0, 0.0269408, 1)
+theme_override_colors/font_outline_color = Color(0.733333, 0.545098, 0.364706, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("3_3j3tq")
+theme_override_font_sizes/font_size = 70
+text = "Nyafamafin"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Label_programmer" type="Label" parent="titles"]
+visible = false
+modulate = Color(1, 1, 1, 0.986667)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -912.0
+offset_top = -235.0
+offset_right = -101.0
+offset_bottom = -148.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.329022, 0.160954, 0.0442569, 1)
+theme_override_colors/font_outline_color = Color(0.733333, 0.545098, 0.364706, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("3_3j3tq")
+theme_override_font_sizes/font_size = 70
+text = "программист:"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="titles/Label_programmer"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 96.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.152941, 0.152941, 0.152941, 0.478431)
+
+[node name="Label_programmer_name" type="Label" parent="titles/Label_programmer"]
+modulate = Color(1, 1, 1, 0.986667)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 89.0
+offset_right = -5.0
+offset_bottom = 93.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.422173, 0, 0.0269408, 1)
+theme_override_colors/font_outline_color = Color(0.733333, 0.545098, 0.364706, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("3_3j3tq")
+theme_override_font_sizes/font_size = 70
+text = "kenuen"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Label_narrative" type="Label" parent="titles"]
+visible = false
+modulate = Color(1, 1, 1, 0.986667)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -912.0
+offset_top = 15.0
+offset_right = -101.0
+offset_bottom = 102.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.329022, 0.160954, 0.0442569, 1)
+theme_override_colors/font_outline_color = Color(0.733333, 0.545098, 0.364706, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("3_3j3tq")
+theme_override_font_sizes/font_size = 70
+text = "нарративный дизайнер:"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="titles/Label_narrative"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 96.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.152941, 0.152941, 0.152941, 0.478431)
+
+[node name="Label_narrative_name" type="Label" parent="titles/Label_narrative"]
+modulate = Color(1, 1, 1, 0.986667)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 89.0
+offset_right = -5.0
+offset_bottom = 93.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.422173, 0, 0.0269408, 1)
+theme_override_colors/font_outline_color = Color(0.733333, 0.545098, 0.364706, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("3_3j3tq")
+theme_override_font_sizes/font_size = 70
+text = "waffle_gladiator"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Animation_titles" type="AnimationPlayer" parent="titles"]
+libraries = {
+"": SubResource("AnimationLibrary_5mi6k")
+}
+autoplay = "titles"

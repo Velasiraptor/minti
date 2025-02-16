@@ -32,9 +32,9 @@ func left_arm(idle, nice, dis):
 		animated_left.play("idle")
 	elif nice:
 		animated_left.play("nice")
-		await get_tree().create_timer(1.0).timeout
+		await get_tree().create_timer(3.0).timeout
 		animated_left.play("idle")
 	elif dis:
 		animated_left.play("dis")
-		await get_tree().create_timer(1.0).timeout
+		await get_tree().create_timer(3.0).timeout
 		animated_left.play("idle")
