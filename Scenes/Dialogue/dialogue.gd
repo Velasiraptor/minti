@@ -30,7 +30,7 @@ extends AnimatedSprite2D
 
 @export var item_1 = "" ## beer,  energy,  meat,  luck,  protection,  fire,  pillow
 @export var item_2 = "" ## beer,  energy,  meat,  luck,  protection,  fire,  pillow
- 
+
 @export var skeleton := false ## Если это скелет, то true. Скелет принимает любые итемы
 @export var thief := false ## Если это вор, и нам нужно чтобы он украл карту, то true.
 @export var dwarf_pillow := false ## Если это гном, и нам нужно чтобы он поднялся выше, то true.
