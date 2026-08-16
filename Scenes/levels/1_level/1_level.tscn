@@ -1,0 +1,425 @@
+[gd_scene format=3 uid="uid://dwnobqd37y5b6"]
+
+[ext_resource type="Texture2D" uid="uid://dp7lgly6mnnav" path="res://Sprites/Background/Background.png" id="1_a5bx8"]
+[ext_resource type="Texture2D" uid="uid://d0amdchhp80h5" path="res://Sprites/Background/light.png" id="2_je2wv"]
+[ext_resource type="Texture2D" uid="uid://i7q8qfgs12" path="res://Sprites/Background/torch.png" id="3_an6ex"]
+[ext_resource type="Texture2D" uid="uid://begdq32a1wfg1" path="res://Sprites/Fire/fire_7.png" id="4_b4gf1"]
+[ext_resource type="Texture2D" uid="uid://cd1rpygkabxn6" path="res://Sprites/Fire/fire_0.png" id="5_r1blr"]
+[ext_resource type="Texture2D" uid="uid://504mo2nt4kpa" path="res://Sprites/Fire/fire_1.png" id="6_ny0bw"]
+[ext_resource type="Texture2D" uid="uid://buu3p85myssnk" path="res://Sprites/Fire/fire_2.png" id="7_ppn2x"]
+[ext_resource type="Texture2D" uid="uid://csr3qmf26ax85" path="res://Sprites/Fire/fire_3.png" id="8_twy5e"]
+[ext_resource type="Texture2D" uid="uid://ca5odmgeonlqy" path="res://Sprites/Fire/fire_4.png" id="9_0agwc"]
+[ext_resource type="Texture2D" uid="uid://1d4tjad46et5" path="res://Sprites/Fire/fire_5.png" id="10_521c5"]
+[ext_resource type="Texture2D" uid="uid://ckkd5xwgp2j2s" path="res://Sprites/Fire/fire_6.png" id="11_f0ho6"]
+[ext_resource type="Shader" uid="uid://pyo335masisa" path="res://Shaders/Blur.gdshader" id="12_hvjpl"]
+[ext_resource type="Texture2D" uid="uid://bqrm3lo2jyuw6" path="res://icon.svg" id="13_woltj"]
+[ext_resource type="Texture2D" uid="uid://bv4ud6rsrmifl" path="res://Sprites/Kiosk/Kiosk.png" id="14_6hiyo"]
+[ext_resource type="Texture2D" uid="uid://ds5lwyved0jwa" path="res://Sprites/Kiosk/flash.png" id="15_fnxxp"]
+[ext_resource type="AudioStream" uid="uid://b833ai76nxkt4" path="res://Sounds/fire_sound.mp3" id="16_jf24i"]
+[ext_resource type="FontFile" uid="uid://2d7kvrvatcea" path="res://Fonts/DS_Greece.ttf" id="17_m3v25"]
+[ext_resource type="AudioStream" uid="uid://cmp6fwdjtvc6h" path="res://Sounds/coins.mp3" id="18_07prl"]
+[ext_resource type="PackedScene" uid="uid://b27w8h1c8lp6d" path="res://Scenes/Table/table.tscn" id="20_bfras"]
+[ext_resource type="PackedScene" uid="uid://1eh5fp3vpcef" path="res://Scenes/Items/item.tscn" id="30_p8kc7"]
+[ext_resource type="PackedScene" uid="uid://cb1ibijfpvpq2" path="res://Scenes/Items/harp.tscn" id="46_bucqw"]
+[ext_resource type="PackedScene" uid="uid://cy2ryh8320b6h" path="res://Scenes/Minotaur/minotaur.tscn" id="47_uju7d"]
+[ext_resource type="Texture2D" uid="uid://csqt7jkrxs2me" path="res://Sprites/hp/full_hp.png" id="48_hnvo1"]
+[ext_resource type="Texture2D" uid="uid://lxt6batnxm1q" path="res://Sprites/hp/left_hp.png" id="49_vveih"]
+[ext_resource type="Texture2D" uid="uid://bbkxjcmojtjoa" path="res://Sprites/hp/right_hp.png" id="50_i3118"]
+
+[sub_resource type="Animation" id="Animation_a3p3x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Minotaur:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.75, 0.75)]
+}
+
+[sub_resource type="Animation" id="Animation_l7oew"]
+resource_name = "back"
+length = 10.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Minotaur:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.75, 0.75), Vector2(0.77, 0.77)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ag655"]
+_data = {
+&"RESET": SubResource("Animation_a3p3x"),
+&"back": SubResource("Animation_l7oew")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dtpo7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_b4gf1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_r1blr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ny0bw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ppn2x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_twy5e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_0agwc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_521c5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_f0ho6")
+}],
+"loop": 1,
+"name": &"fire",
+"speed": 10.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jecm5"]
+shader = ExtResource("12_hvjpl")
+shader_parameter/lod = 0.7
+
+[sub_resource type="Animation" id="Animation_8017j"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(61.3334, -42.6667)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_xsi7w"]
+resource_name = "plus"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(61.3334, -42.6667), Vector2(105.333, -85.3333)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.0333333, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3am1l"]
+_data = {
+&"RESET": SubResource("Animation_8017j"),
+&"plus": SubResource("Animation_xsi7w")
+}
+
+[sub_resource type="Gradient" id="Gradient_j3sfj"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="1_level" type="Node2D" unique_id=461230494]
+
+[node name="Background" type="Node2D" parent="." unique_id=221204001]
+position = Vector2(0, 20)
+
+[node name="Animation_Back" type="AnimationPlayer" parent="Background" unique_id=383521495]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_ag655")
+autoplay = &"back"
+
+[node name="Background_sprite" type="Sprite2D" parent="Background" unique_id=672517461]
+modulate = Color(0.804743, 0.804743, 0.804743, 1)
+position = Vector2(0, 42)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("1_a5bx8")
+
+[node name="Light" type="Sprite2D" parent="Background" unique_id=1860095723]
+modulate = Color(1, 1, 1, 0.772549)
+position = Vector2(-81, 28)
+scale = Vector2(1.1374, 1.18548)
+texture = ExtResource("2_je2wv")
+
+[node name="Torch" type="Sprite2D" parent="Background" unique_id=569389767]
+position = Vector2(-84, 92)
+texture = ExtResource("3_an6ex")
+
+[node name="fire" type="AnimatedSprite2D" parent="Background" unique_id=1692703363]
+position = Vector2(-86, -4)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_dtpo7")
+animation = &"fire"
+autoplay = "fire"
+
+[node name="Light2" type="Sprite2D" parent="Background" unique_id=888059043]
+modulate = Color(1, 1, 1, 0.772549)
+position = Vector2(-15, -341)
+texture = ExtResource("2_je2wv")
+
+[node name="Torch2" type="Sprite2D" parent="Background" unique_id=974960784]
+position = Vector2(-17, -285)
+texture = ExtResource("3_an6ex")
+
+[node name="fire2" type="AnimatedSprite2D" parent="Background" unique_id=282190177]
+position = Vector2(-19, -381)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_dtpo7")
+animation = &"fire"
+autoplay = "fire"
+
+[node name="Blur" type="TextureRect" parent="Background" unique_id=771798463]
+material = SubResource("ShaderMaterial_jecm5")
+offset_left = -1039.5
+offset_top = -620.25
+offset_right = 1765.5
+offset_bottom = 1046.75
+texture = ExtResource("13_woltj")
+
+[node name="Kiosk" type="Sprite2D" parent="." unique_id=1270963178]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("14_6hiyo")
+
+[node name="Flash" type="Sprite2D" parent="Kiosk" unique_id=883789315]
+position = Vector2(-990.667, -437.333)
+texture = ExtResource("15_fnxxp")
+
+[node name="fire" type="AnimatedSprite2D" parent="Kiosk/Flash" unique_id=1195106951]
+show_behind_parent = true
+position = Vector2(-4, 18.6667)
+scale = Vector2(2.71186, 1)
+sprite_frames = SubResource("SpriteFrames_dtpo7")
+animation = &"fire"
+autoplay = "fire"
+
+[node name="Audio_fire" type="AudioStreamPlayer2D" parent="Kiosk/Flash" unique_id=648060801]
+position = Vector2(0.000325521, 124)
+stream = ExtResource("16_jf24i")
+autoplay = true
+max_distance = 1200.0
+
+[node name="Gold" type="Label" parent="Kiosk" unique_id=1312744350]
+unique_name_in_owner = true
+offset_left = -685.0
+offset_top = -627.0
+offset_right = -455.0
+offset_bottom = -572.0
+theme_override_colors/font_color = Color(0.235294, 0.156863, 0.109804, 1)
+theme_override_fonts/font = ExtResource("17_m3v25")
+theme_override_font_sizes/font_size = 40
+text = "0/ 1000"
+horizontal_alignment = 2
+
+[node name="plus_money" type="Label" parent="Kiosk/Gold" unique_id=2077247248]
+visible = false
+layout_mode = 0
+offset_left = 61.3334
+offset_top = -42.6667
+offset_right = 127.333405
+offset_bottom = 7.3333397
+theme_override_colors/font_color = Color(0.235294, 0.156863, 0.109804, 1)
+theme_override_colors/font_outline_color = Color(0.87451, 0.713726, 0.482353, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("17_m3v25")
+theme_override_font_sizes/font_size = 40
+text = "+40"
+
+[node name="Animation_gold" type="AnimationPlayer" parent="Kiosk/Gold/plus_money" unique_id=1049370731]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_3am1l")
+
+[node name="Audio_gold" type="AudioStreamPlayer2D" parent="Kiosk/Gold" unique_id=1668099872]
+unique_name_in_owner = true
+stream = ExtResource("18_07prl")
+
+[node name="Harp" parent="." unique_id=543172215 instance=ExtResource("46_bucqw")]
+position = Vector2(-835, 299)
+
+[node name="Table" parent="." unique_id=1393160617 instance=ExtResource("20_bfras")]
+position = Vector2(-286, 273)
+
+[node name="HP" type="Node2D" parent="." unique_id=1516919785]
+
+[node name="FullHp_1" type="Sprite2D" parent="HP" unique_id=395134530]
+unique_name_in_owner = true
+position = Vector2(21, -439)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("48_hnvo1")
+
+[node name="FullHp_2" type="Sprite2D" parent="HP" unique_id=42075671]
+unique_name_in_owner = true
+position = Vector2(84, -439)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("48_hnvo1")
+
+[node name="FullHp_3" type="Sprite2D" parent="HP" unique_id=467344850]
+unique_name_in_owner = true
+position = Vector2(147, -439)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("48_hnvo1")
+
+[node name="Left_Hp_1" type="CPUParticles2D" parent="HP" unique_id=1994829440]
+unique_name_in_owner = true
+position = Vector2(21, -439)
+emitting = false
+amount = 1
+texture = ExtResource("49_vveih")
+one_shot = true
+emission_shape = 1
+emission_sphere_radius = 20.0
+gravity = Vector2(-50, 100)
+scale_amount_min = 0.75
+scale_amount_max = 0.75
+color_ramp = SubResource("Gradient_j3sfj")
+
+[node name="Right_Hp_1" type="CPUParticles2D" parent="HP" unique_id=2115396021]
+unique_name_in_owner = true
+position = Vector2(21, -439)
+emitting = false
+amount = 1
+texture = ExtResource("50_i3118")
+one_shot = true
+emission_shape = 1
+emission_sphere_radius = 20.0
+gravity = Vector2(50, 100)
+scale_amount_min = 0.75
+scale_amount_max = 0.75
+color_ramp = SubResource("Gradient_j3sfj")
+
+[node name="Left_Hp_2" type="CPUParticles2D" parent="HP" unique_id=1585487637]
+unique_name_in_owner = true
+position = Vector2(85, -439)
+emitting = false
+amount = 1
+texture = ExtResource("49_vveih")
+one_shot = true
+emission_shape = 1
+emission_sphere_radius = 20.0
+gravity = Vector2(-50, 100)
+scale_amount_min = 0.75
+scale_amount_max = 0.75
+color_ramp = SubResource("Gradient_j3sfj")
+
+[node name="Right_Hp_2" type="CPUParticles2D" parent="HP" unique_id=1893760779]
+unique_name_in_owner = true
+position = Vector2(85, -439)
+emitting = false
+amount = 1
+texture = ExtResource("50_i3118")
+one_shot = true
+emission_shape = 1
+emission_sphere_radius = 20.0
+gravity = Vector2(50, 100)
+scale_amount_min = 0.75
+scale_amount_max = 0.75
+color_ramp = SubResource("Gradient_j3sfj")
+
+[node name="Left_Hp_3" type="CPUParticles2D" parent="HP" unique_id=610697621]
+unique_name_in_owner = true
+position = Vector2(148, -439)
+emitting = false
+amount = 1
+texture = ExtResource("49_vveih")
+one_shot = true
+emission_shape = 1
+emission_sphere_radius = 20.0
+gravity = Vector2(-50, 100)
+scale_amount_min = 0.75
+scale_amount_max = 0.75
+color_ramp = SubResource("Gradient_j3sfj")
+
+[node name="Right_Hp_3" type="CPUParticles2D" parent="HP" unique_id=728329836]
+unique_name_in_owner = true
+position = Vector2(148, -439)
+emitting = false
+amount = 1
+texture = ExtResource("50_i3118")
+one_shot = true
+emission_shape = 1
+emission_sphere_radius = 20.0
+gravity = Vector2(50, 100)
+scale_amount_min = 0.75
+scale_amount_max = 0.75
+color_ramp = SubResource("Gradient_j3sfj")
+
+[node name="Camera" type="Camera2D" parent="." unique_id=1956360740]
+
+[node name="items" type="Node2D" parent="." unique_id=700030479]
+
+[node name="item" parent="items" unique_id=173174793 instance=ExtResource("30_p8kc7")]
+position = Vector2(198, 266)
+
+[node name="item2" parent="items" unique_id=828766006 instance=ExtResource("30_p8kc7")]
+position = Vector2(648, -117)
+short_arm = false
+
+[node name="Minotaur" parent="." unique_id=1134282030 instance=ExtResource("47_uju7d")]

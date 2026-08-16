@@ -1,11 +1,11 @@
-[gd_scene load_steps=115 format=3 uid="uid://cbtg1e86c4hhh"]
+[gd_scene format=3 uid="uid://cbtg1e86c4hhh"]
 
 [ext_resource type="Texture2D" uid="uid://dp7lgly6mnnav" path="res://Sprites/Background/Background.png" id="1_2c32x"]
-[ext_resource type="Script" path="res://game.gd" id="1_cr3wv"]
+[ext_resource type="Script" uid="uid://b6xr1gsa4q8j4" path="res://game.gd" id="1_cr3wv"]
 [ext_resource type="Texture2D" uid="uid://d0amdchhp80h5" path="res://Sprites/Background/light.png" id="2_5l6wg"]
-[ext_resource type="PackedScene" uid="uid://dh7ll11x8aurc" path="res://Scenes/Items/item.tscn" id="2_6gmc7"]
-[ext_resource type="PackedScene" uid="uid://bty8e4xi3nppy" path="res://Scenes/Table/table.tscn" id="2_8lveu"]
-[ext_resource type="Shader" path="res://Shaders/Blur.gdshader" id="2_fbna1"]
+[ext_resource type="PackedScene" uid="uid://dh7ll11x8aurc" path="res://Scenes/Items/Old/old_item.tscn" id="2_6gmc7"]
+[ext_resource type="PackedScene" uid="uid://bty8e4xi3nppy" path="res://Scenes/Table/Old/old_table.tscn" id="2_8lveu"]
+[ext_resource type="Shader" uid="uid://pyo335masisa" path="res://Shaders/Blur.gdshader" id="2_fbna1"]
 [ext_resource type="Texture2D" uid="uid://i7q8qfgs12" path="res://Sprites/Background/torch.png" id="3_0uxn1"]
 [ext_resource type="Texture2D" uid="uid://dwt4qp6qnnhn3" path="res://Sprites/Items/Meat.png" id="3_30tcc"]
 [ext_resource type="Texture2D" uid="uid://bqrm3lo2jyuw6" path="res://icon.svg" id="3_d6i1y"]
@@ -133,8 +133,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_imvua"]
 _data = {
-"RESET": SubResource("Animation_a3p3x"),
-"back": SubResource("Animation_l7oew")
+&"RESET": SubResource("Animation_a3p3x"),
+&"back": SubResource("Animation_l7oew")
 }
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_egq3h"]
@@ -164,7 +164,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("7_eha0d")
 }],
-"loop": true,
+"loop": 1,
 "name": &"fire",
 "speed": 10.0
 }]
@@ -209,7 +209,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("20_hm32t")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle",
 "speed": 5.0
 }, {
@@ -223,7 +223,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("21_aa1cm")
 }],
-"loop": true,
+"loop": 1,
 "name": &"talk",
 "speed": 5.0
 }]
@@ -273,7 +273,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("17_aumje")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle",
 "speed": 5.0
 }, {
@@ -287,7 +287,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("19_j4aas")
 }],
-"loop": true,
+"loop": 1,
 "name": &"talk",
 "speed": 5.0
 }]
@@ -331,7 +331,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("27_l8rb3")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle",
 "speed": 5.0
 }, {
@@ -345,7 +345,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("28_ukvam")
 }],
-"loop": true,
+"loop": 1,
 "name": &"talk",
 "speed": 5.0
 }]
@@ -386,7 +386,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("39_j3esu")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle",
 "speed": 5.0
 }, {
@@ -400,7 +400,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("40_4nlwo")
 }],
-"loop": true,
+"loop": 1,
 "name": &"talk",
 "speed": 5.0
 }]
@@ -411,7 +411,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("32_xa65h")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle",
 "speed": 5.0
 }, {
@@ -425,7 +425,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("33_prtl7")
 }],
-"loop": true,
+"loop": 1,
 "name": &"talk",
 "speed": 5.0
 }]
@@ -466,7 +466,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("36_80vba")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle",
 "speed": 5.0
 }, {
@@ -480,7 +480,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("37_ulanr")
 }],
-"loop": true,
+"loop": 1,
 "name": &"talk",
 "speed": 5.0
 }]
@@ -521,7 +521,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("20_41eyl")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle",
 "speed": 5.0
 }, {
@@ -535,7 +535,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("21_qo8tv")
 }],
-"loop": true,
+"loop": 1,
 "name": &"talk",
 "speed": 5.0
 }]
@@ -621,43 +621,41 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_urg30"]
 _data = {
-"RESET": SubResource("Animation_8017j"),
-"plus": SubResource("Animation_xsi7w")
+&"RESET": SubResource("Animation_8017j"),
+&"plus": SubResource("Animation_xsi7w")
 }
 
 [sub_resource type="Gradient" id="Gradient_rt0n7"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
-[node name="Game" type="Node2D" groups=["Game"]]
+[node name="Game" type="Node2D" unique_id=2094819306 groups=["Game"]]
 script = ExtResource("1_cr3wv")
 
-[node name="Background" type="Node2D" parent="."]
+[node name="Background" type="Node2D" parent="." unique_id=1161183600]
 position = Vector2(0, 20)
 
-[node name="Animation_Back" type="AnimationPlayer" parent="Background"]
+[node name="Animation_Back" type="AnimationPlayer" parent="Background" unique_id=199636438]
 root_node = NodePath("../..")
-libraries = {
-"": SubResource("AnimationLibrary_imvua")
-}
-autoplay = "back"
+libraries/ = SubResource("AnimationLibrary_imvua")
+autoplay = &"back"
 
-[node name="Background_sprite" type="Sprite2D" parent="Background"]
+[node name="Background_sprite" type="Sprite2D" parent="Background" unique_id=191843179]
 modulate = Color(0.804743, 0.804743, 0.804743, 1)
 position = Vector2(0, 42)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("1_2c32x")
 
-[node name="Light" type="Sprite2D" parent="Background"]
+[node name="Light" type="Sprite2D" parent="Background" unique_id=1502247304]
 modulate = Color(1, 1, 1, 0.772549)
 position = Vector2(-81, 28)
 scale = Vector2(1.1374, 1.18548)
 texture = ExtResource("2_5l6wg")
 
-[node name="Torch" type="Sprite2D" parent="Background"]
+[node name="Torch" type="Sprite2D" parent="Background" unique_id=691309413]
 position = Vector2(-84, 92)
 texture = ExtResource("3_0uxn1")
 
-[node name="fire" type="AnimatedSprite2D" parent="Background"]
+[node name="fire" type="AnimatedSprite2D" parent="Background" unique_id=316591972]
 position = Vector2(-86, -4)
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_egq3h")
@@ -665,16 +663,16 @@ animation = &"fire"
 autoplay = "fire"
 frame_progress = 0.879615
 
-[node name="Light2" type="Sprite2D" parent="Background"]
+[node name="Light2" type="Sprite2D" parent="Background" unique_id=90672544]
 modulate = Color(1, 1, 1, 0.772549)
 position = Vector2(-15, -341)
 texture = ExtResource("2_5l6wg")
 
-[node name="Torch2" type="Sprite2D" parent="Background"]
+[node name="Torch2" type="Sprite2D" parent="Background" unique_id=1117416049]
 position = Vector2(-17, -285)
 texture = ExtResource("3_0uxn1")
 
-[node name="fire2" type="AnimatedSprite2D" parent="Background"]
+[node name="fire2" type="AnimatedSprite2D" parent="Background" unique_id=1396240186]
 position = Vector2(-19, -381)
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_egq3h")
@@ -682,7 +680,7 @@ animation = &"fire"
 autoplay = "fire"
 frame_progress = 0.879615
 
-[node name="Blur" type="TextureRect" parent="Background"]
+[node name="Blur" type="TextureRect" parent="Background" unique_id=1595328474]
 material = SubResource("ShaderMaterial_8isbu")
 offset_left = -1039.5
 offset_top = -620.25
@@ -690,10 +688,10 @@ offset_right = 1765.5
 offset_bottom = 1046.75
 texture = ExtResource("3_d6i1y")
 
-[node name="Dialogues" type="Node2D" parent="."]
+[node name="Dialogues" type="Node2D" parent="." unique_id=2131246736]
 unique_name_in_owner = true
 
-[node name="Knight_1" parent="Dialogues" instance=ExtResource("14_004et")]
+[node name="Knight_1" parent="Dialogues" unique_id=458352535 instance=ExtResource("14_004et")]
 position = Vector2(-318, -10)
 text_1 = "Здравствуй, ты Минотавр, верно?"
 text_2 = "Меня зовут Вильгельм, я прибыл сюда с особой целью, но я не могу тебе ее раскрыть. Ты не видел здесь других людей? Помимо меня."
@@ -714,7 +712,7 @@ stream = ExtResource("17_s57sv")
 [node name="Audio_bad" parent="Dialogues/Knight_1" index="4"]
 stream = ExtResource("18_7bxjp")
 
-[node name="Wizard_1" parent="Dialogues" instance=ExtResource("14_004et")]
+[node name="Wizard_1" parent="Dialogues" unique_id=425001085 instance=ExtResource("14_004et")]
 position = Vector2(-318, 40)
 sprite_frames = SubResource("SpriteFrames_1lly5")
 text_1 = "Минотавр, ха-ха! Наконец-то я нашел тебя! Я прибыл сюда из далеких земель чтобы сразить тебя и разрушить лабиринт."
@@ -746,7 +744,7 @@ volume_db = -5.0
 stream = ExtResource("24_sevhh")
 volume_db = -10.0
 
-[node name="Elf_1" parent="Dialogues" instance=ExtResource("14_004et")]
+[node name="Elf_1" parent="Dialogues" unique_id=889607555 instance=ExtResource("14_004et")]
 position = Vector2(-318, 48)
 sprite_frames = SubResource("SpriteFrames_3qrd2")
 frame_progress = 0.177338
@@ -779,7 +777,7 @@ stream = ExtResource("24_f7hqo")
 [node name="Audio_bad" parent="Dialogues/Elf_1" index="4"]
 stream = ExtResource("25_swgjl")
 
-[node name="Ork_1" parent="Dialogues" instance=ExtResource("14_004et")]
+[node name="Ork_1" parent="Dialogues" unique_id=77553012 instance=ExtResource("14_004et")]
 position = Vector2(-318, -8)
 sprite_frames = SubResource("SpriteFrames_yr62c")
 text_1 = "ЭЙ! ТЫ ХТО? ТЫ ТОРГАШ?"
@@ -812,7 +810,7 @@ volume_db = -5.0
 [node name="Audio_bad" parent="Dialogues/Ork_1" index="4"]
 stream = ExtResource("31_g0qo4")
 
-[node name="Bandit_1" parent="Dialogues" instance=ExtResource("14_004et")]
+[node name="Bandit_1" parent="Dialogues" unique_id=190339167 instance=ExtResource("14_004et")]
 position = Vector2(-318, 47)
 sprite_frames = SubResource("SpriteFrames_3h6vo")
 text_1 = "Здравствуй! Ох, как я рад видеть хоть кого-то дружелюбного здесь. Меня зовут... Ричард. Я случайно забрeл сюда. "
@@ -850,7 +848,7 @@ volume_db = -5.0
 stream = ExtResource("43_aviev")
 volume_db = -5.0
 
-[node name="Skeleton_1" parent="Dialogues" instance=ExtResource("14_004et")]
+[node name="Skeleton_1" parent="Dialogues" unique_id=1776415521 instance=ExtResource("14_004et")]
 position = Vector2(-318, -2)
 sprite_frames = SubResource("SpriteFrames_sl8oo")
 text_1 = "Я не верю своим отверстиям для глаз, да это же тот самый МИНОТАВР!"
@@ -879,7 +877,7 @@ stream = ExtResource("34_jar8y")
 [node name="Audio_bad" parent="Dialogues/Skeleton_1" index="4"]
 stream = ExtResource("34_jar8y")
 
-[node name="Dwarf_1" parent="Dialogues" instance=ExtResource("14_004et")]
+[node name="Dwarf_1" parent="Dialogues" unique_id=490305606 instance=ExtResource("14_004et")]
 unique_name_in_owner = true
 position = Vector2(-318, 288)
 sprite_frames = SubResource("SpriteFrames_yhdgv")
@@ -917,7 +915,7 @@ volume_db = -5.0
 stream = ExtResource("21_yyqsm")
 volume_db = -5.0
 
-[node name="Princess_1" parent="Dialogues" instance=ExtResource("14_004et")]
+[node name="Princess_1" parent="Dialogues" unique_id=1161045070 instance=ExtResource("14_004et")]
 position = Vector2(-318, 61)
 sprite_frames = SubResource("SpriteFrames_7gxyu")
 text_1 = "О боги, неужели хоть одно мирное создание за день? Ты ведь не собираешься съесть меня или ограбить? Правда?"
@@ -951,7 +949,7 @@ volume_db = -2.0
 stream = ExtResource("24_ga80r")
 volume_db = 2.0
 
-[node name="Knight_2" parent="Dialogues" instance=ExtResource("14_004et")]
+[node name="Knight_2" parent="Dialogues" unique_id=1817105924 instance=ExtResource("14_004et")]
 position = Vector2(-318, -10)
 text_1 = "Я снова на тебя наткнулся, Минотавр! Моя миссия пока что не увенчалась успехом. "
 text_2 = "Скажи мне, ты видел здесь принцессу?"
@@ -972,7 +970,7 @@ stream = ExtResource("17_s57sv")
 [node name="Audio_bad" parent="Dialogues/Knight_2" index="4"]
 stream = ExtResource("18_7bxjp")
 
-[node name="Wizard_2" parent="Dialogues" instance=ExtResource("14_004et")]
+[node name="Wizard_2" parent="Dialogues" unique_id=672931944 instance=ExtResource("14_004et")]
 position = Vector2(-318, 40)
 sprite_frames = SubResource("SpriteFrames_1lly5")
 text_1 = "АХ! Я снова здесь! Как ты вообще тут ориентируешься?"
@@ -1007,7 +1005,7 @@ volume_db = -5.0
 stream = ExtResource("24_sevhh")
 volume_db = -10.0
 
-[node name="Elf_2" parent="Dialogues" instance=ExtResource("14_004et")]
+[node name="Elf_2" parent="Dialogues" unique_id=148436499 instance=ExtResource("14_004et")]
 position = Vector2(-318, 48)
 sprite_frames = SubResource("SpriteFrames_3qrd2")
 text_1 = "Привет, Минотавр, это снова я! Тот огонек уже совсем погас."
@@ -1036,7 +1034,7 @@ stream = ExtResource("24_f7hqo")
 [node name="Audio_bad" parent="Dialogues/Elf_2" index="4"]
 stream = ExtResource("25_swgjl")
 
-[node name="Ork_2" parent="Dialogues" instance=ExtResource("14_004et")]
+[node name="Ork_2" parent="Dialogues" unique_id=1507535372 instance=ExtResource("14_004et")]
 position = Vector2(-318, -8)
 sprite_frames = SubResource("SpriteFrames_yr62c")
 text_1 = "ТЫ ВСЕ ЕЩЕ С ЭТОЙ ГЛУПОЙ МАСКОЙ? НУ СМАРИ САМ, ПРОСТО ГОВОРЮ ЧТО ТЫ ВЫГЛЯДИШЬ ТУПО СО СТОРОНЫ!"
@@ -1067,7 +1065,7 @@ volume_db = -5.0
 [node name="Audio_bad" parent="Dialogues/Ork_2" index="4"]
 stream = ExtResource("31_g0qo4")
 
-[node name="Bandit_2" parent="Dialogues" instance=ExtResource("14_004et")]
+[node name="Bandit_2" parent="Dialogues" unique_id=870937819 instance=ExtResource("14_004et")]
 position = Vector2(-318, 47)
 sprite_frames = SubResource("SpriteFrames_3h6vo")
 text_1 = "Эй, это снова я. Я собрал немного мелочи здесь в округе."
@@ -1102,7 +1100,7 @@ volume_db = -5.0
 stream = ExtResource("43_aviev")
 volume_db = -5.0
 
-[node name="Skeleton_2" parent="Dialogues" instance=ExtResource("14_004et")]
+[node name="Skeleton_2" parent="Dialogues" unique_id=853197819 instance=ExtResource("14_004et")]
 position = Vector2(-318, -2)
 sprite_frames = SubResource("SpriteFrames_sl8oo")
 text_1 = "Эйй! Это же мой самый любимый минотавр из всех минотавров, которых я знаю! Как ты тут, не заскучал? Все товары продал, а? Ха-ха-ха."
@@ -1133,7 +1131,7 @@ stream = ExtResource("34_jar8y")
 [node name="Audio_bad" parent="Dialogues/Skeleton_2" index="4"]
 stream = ExtResource("34_jar8y")
 
-[node name="Dwarf_2" parent="Dialogues" instance=ExtResource("14_004et")]
+[node name="Dwarf_2" parent="Dialogues" unique_id=549836129 instance=ExtResource("14_004et")]
 unique_name_in_owner = true
 position = Vector2(-318, 288)
 sprite_frames = SubResource("SpriteFrames_yhdgv")
@@ -1168,7 +1166,7 @@ volume_db = -5.0
 stream = ExtResource("21_yyqsm")
 volume_db = -5.0
 
-[node name="Princess_2" parent="Dialogues" instance=ExtResource("14_004et")]
+[node name="Princess_2" parent="Dialogues" unique_id=114109298 instance=ExtResource("14_004et")]
 position = Vector2(-318, 61)
 sprite_frames = SubResource("SpriteFrames_7gxyu")
 text_1 = "Ох, я снова здесь. Проклятье! Я была уверена, что двигаюсь к выходу. Ух!"
@@ -1200,7 +1198,7 @@ volume_db = -2.0
 stream = ExtResource("24_ga80r")
 volume_db = 2.0
 
-[node name="Knight_3" parent="Dialogues" instance=ExtResource("14_004et")]
+[node name="Knight_3" parent="Dialogues" unique_id=558965775 instance=ExtResource("14_004et")]
 position = Vector2(-318, -10)
 text_1 = "Я так ее до сих пор и не встретил, принцессу. Скажи же мне, ты видел ее с нашей последней встречи? "
 txt_1_arm_idle = false
@@ -1221,7 +1219,7 @@ stream = ExtResource("17_s57sv")
 [node name="Audio_bad" parent="Dialogues/Knight_3" index="4"]
 stream = ExtResource("18_7bxjp")
 
-[node name="Wizard_3" parent="Dialogues" instance=ExtResource("14_004et")]
+[node name="Wizard_3" parent="Dialogues" unique_id=1397118821 instance=ExtResource("14_004et")]
 position = Vector2(-318, 40)
 sprite_frames = SubResource("SpriteFrames_1lly5")
 text_1 = "Клянусь тебе, я сожгу этот лабиринт, если проведу в нем еще хоть одну секунду. Я начинаю сходить здесь с ума."
@@ -1256,7 +1254,7 @@ volume_db = -5.0
 stream = ExtResource("24_sevhh")
 volume_db = -10.0
 
-[node name="Elf_3" parent="Dialogues" instance=ExtResource("14_004et")]
+[node name="Elf_3" parent="Dialogues" unique_id=449632451 instance=ExtResource("14_004et")]
 position = Vector2(-318, 48)
 sprite_frames = SubResource("SpriteFrames_3qrd2")
 frame_progress = 0.177338
@@ -1289,7 +1287,7 @@ stream = ExtResource("24_f7hqo")
 [node name="Audio_bad" parent="Dialogues/Elf_3" index="4"]
 stream = ExtResource("25_swgjl")
 
-[node name="Ork_3" parent="Dialogues" instance=ExtResource("14_004et")]
+[node name="Ork_3" parent="Dialogues" unique_id=1880471430 instance=ExtResource("14_004et")]
 position = Vector2(-318, -8)
 sprite_frames = SubResource("SpriteFrames_yr62c")
 text_1 = "ПРИВЕТ, ЭТО Я, КРАГ! ПОМНИШЬ МЕНЯ? ТЫ ПОМНИШЬ МЕНЯ ИЛИ НЕТ?"
@@ -1321,7 +1319,7 @@ volume_db = -5.0
 [node name="Audio_bad" parent="Dialogues/Ork_3" index="4"]
 stream = ExtResource("31_g0qo4")
 
-[node name="Bandit_3" parent="Dialogues" instance=ExtResource("14_004et")]
+[node name="Bandit_3" parent="Dialogues" unique_id=1803365663 instance=ExtResource("14_004et")]
 position = Vector2(-318, 47)
 sprite_frames = SubResource("SpriteFrames_3h6vo")
 text_1 = "Я снова здесь. Дерьмо... Подскажи, друг, а тебе не встречалась тут молодая девушка? Она моя... знакомая. Ее зовут Матильда."
@@ -1356,7 +1354,7 @@ volume_db = -5.0
 stream = ExtResource("43_aviev")
 volume_db = -5.0
 
-[node name="Skeleton_3" parent="Dialogues" instance=ExtResource("14_004et")]
+[node name="Skeleton_3" parent="Dialogues" unique_id=80376865 instance=ExtResource("14_004et")]
 position = Vector2(-318, -2)
 sprite_frames = SubResource("SpriteFrames_sl8oo")
 text_1 = "Минти! Это снова твой самый любимый скелет на свете! Кстати, я же ведь так и не представился! Ты можешь звать меня Мертвец. Я знаю, мне очень подходит."
@@ -1385,7 +1383,7 @@ stream = ExtResource("34_jar8y")
 [node name="Audio_bad" parent="Dialogues/Skeleton_3" index="4"]
 stream = ExtResource("34_jar8y")
 
-[node name="Dwarf_3" parent="Dialogues" instance=ExtResource("14_004et")]
+[node name="Dwarf_3" parent="Dialogues" unique_id=1751538099 instance=ExtResource("14_004et")]
 unique_name_in_owner = true
 position = Vector2(-318, 288)
 sprite_frames = SubResource("SpriteFrames_yhdgv")
@@ -1420,7 +1418,7 @@ volume_db = -5.0
 stream = ExtResource("21_yyqsm")
 volume_db = -5.0
 
-[node name="Princess_3" parent="Dialogues" instance=ExtResource("14_004et")]
+[node name="Princess_3" parent="Dialogues" unique_id=715776289 instance=ExtResource("14_004et")]
 position = Vector2(-318, 61)
 sprite_frames = SubResource("SpriteFrames_7gxyu")
 text_1 = "Минотавр! Славно снова увидеть тебя, ха-ха! Прости, но я не представилась тебе, как подобает. "
@@ -1452,7 +1450,7 @@ volume_db = -2.0
 stream = ExtResource("24_ga80r")
 volume_db = 2.0
 
-[node name="Knight_4" parent="Dialogues" instance=ExtResource("14_004et")]
+[node name="Knight_4" parent="Dialogues" unique_id=2011356102 instance=ExtResource("14_004et")]
 position = Vector2(-318, -10)
 text_1 = "А, вот и ты! Я как раз тебя искал. Я встретил колдуна. Он сообщил мне, что встретил принцессу. "
 text_2 = "По его словам, это было совсем недавно, но она выглядела скудно. Должно быть, она совсем вымоталась бежать по этому лабиринту."
@@ -1470,7 +1468,7 @@ stream = ExtResource("17_s57sv")
 [node name="Audio_bad" parent="Dialogues/Knight_4" index="4"]
 stream = ExtResource("18_7bxjp")
 
-[node name="Wizard_4" parent="Dialogues" instance=ExtResource("14_004et")]
+[node name="Wizard_4" parent="Dialogues" unique_id=880782196 instance=ExtResource("14_004et")]
 position = Vector2(-318, 40)
 sprite_frames = SubResource("SpriteFrames_1lly5")
 text_1 = "Я встретил здесь... принцессу Вольфгарда. Ничего не хочешь мне рассказать по этому поводу?"
@@ -1504,7 +1502,7 @@ volume_db = -5.0
 stream = ExtResource("24_sevhh")
 volume_db = -10.0
 
-[node name="Elf_4" parent="Dialogues" instance=ExtResource("14_004et")]
+[node name="Elf_4" parent="Dialogues" unique_id=253756168 instance=ExtResource("14_004et")]
 position = Vector2(-318, 48)
 sprite_frames = SubResource("SpriteFrames_3qrd2")
 frame_progress = 0.177338
@@ -1537,7 +1535,7 @@ stream = ExtResource("24_f7hqo")
 [node name="Audio_bad" parent="Dialogues/Elf_4" index="4"]
 stream = ExtResource("25_swgjl")
 
-[node name="Ork_4" parent="Dialogues" instance=ExtResource("14_004et")]
+[node name="Ork_4" parent="Dialogues" unique_id=490086775 instance=ExtResource("14_004et")]
 position = Vector2(-318, -8)
 sprite_frames = SubResource("SpriteFrames_yr62c")
 text_1 = "ЭТО ОПЯТЬ Я, КРАГ! ВСЕ, МНЕ НАДОЕЛО ЭТО МЕСТО."
@@ -1568,7 +1566,7 @@ volume_db = -5.0
 [node name="Audio_bad" parent="Dialogues/Ork_4" index="4"]
 stream = ExtResource("31_g0qo4")
 
-[node name="Bandit_4" parent="Dialogues" instance=ExtResource("14_004et")]
+[node name="Bandit_4" parent="Dialogues" unique_id=133774803 instance=ExtResource("14_004et")]
 position = Vector2(-318, 47)
 sprite_frames = SubResource("SpriteFrames_3h6vo")
 text_1 = "Ты обманул меня! Эта карта неправильная! Почему я не могу выйти по ней? Каждый раз, когда я иду в направлении выхода, карта перерисовывается."
@@ -1602,7 +1600,7 @@ volume_db = -5.0
 stream = ExtResource("43_aviev")
 volume_db = -5.0
 
-[node name="Skeleton_4" parent="Dialogues" instance=ExtResource("14_004et")]
+[node name="Skeleton_4" parent="Dialogues" unique_id=2023562729 instance=ExtResource("14_004et")]
 position = Vector2(-318, -2)
 sprite_frames = SubResource("SpriteFrames_sl8oo")
 text_1 = "Значит, иду я как-то раз по улице, никого не трогаю. В капюшоне, маске, всё как подобает мертвецу. Как вдруг ко мне подходит милая девчушка, щечки розовые, полные жизни."
@@ -1631,7 +1629,7 @@ stream = ExtResource("34_jar8y")
 [node name="Audio_bad" parent="Dialogues/Skeleton_4" index="4"]
 stream = ExtResource("34_jar8y")
 
-[node name="Dwarf_4" parent="Dialogues" instance=ExtResource("14_004et")]
+[node name="Dwarf_4" parent="Dialogues" unique_id=747316982 instance=ExtResource("14_004et")]
 unique_name_in_owner = true
 position = Vector2(-318, 288)
 sprite_frames = SubResource("SpriteFrames_yhdgv")
@@ -1668,7 +1666,7 @@ volume_db = -5.0
 stream = ExtResource("21_yyqsm")
 volume_db = -5.0
 
-[node name="Princess_4" parent="Dialogues" instance=ExtResource("14_004et")]
+[node name="Princess_4" parent="Dialogues" unique_id=1490040952 instance=ExtResource("14_004et")]
 position = Vector2(-318, 61)
 sprite_frames = SubResource("SpriteFrames_7gxyu")
 text_1 = "Ха-ха-ха! Я так и знала, что найду тебя здесь, Минотавр! Кажется, у меня получается. Я запомнила ориентиры и пришла сюда."
@@ -1698,7 +1696,7 @@ volume_db = -2.0
 stream = ExtResource("24_ga80r")
 volume_db = 2.0
 
-[node name="Wizard_5" parent="Dialogues" instance=ExtResource("14_004et")]
+[node name="Wizard_5" parent="Dialogues" unique_id=799466987 instance=ExtResource("14_004et")]
 position = Vector2(-318, 40)
 sprite_frames = SubResource("SpriteFrames_1lly5")
 text_1 = "Я нашел их! Я нашел рукописи! Я могу создать заклинание скачка в пространстве."
@@ -1730,7 +1728,7 @@ volume_db = -5.0
 stream = ExtResource("24_sevhh")
 volume_db = -10.0
 
-[node name="Ork_5" parent="Dialogues" instance=ExtResource("14_004et")]
+[node name="Ork_5" parent="Dialogues" unique_id=929678425 instance=ExtResource("14_004et")]
 position = Vector2(-318, -8)
 sprite_frames = SubResource("SpriteFrames_yr62c")
 text_1 = "ЭТОТ ПРИДУРОК С БОЛЬШОЙ ПАЛКОЙ СКАЗАЛ, ЧТО МОЖЕТ ПАМОЧЬ УЙТИ ОТСЮДАВА. РРРРРР... НЕ НРАВИЦА ОН МНЕ, А ТЕБЕ, ТОРГАШ?"
@@ -1763,7 +1761,7 @@ volume_db = -5.0
 [node name="Audio_bad" parent="Dialogues/Ork_5" index="4"]
 stream = ExtResource("31_g0qo4")
 
-[node name="Elf_5" parent="Dialogues" instance=ExtResource("14_004et")]
+[node name="Elf_5" parent="Dialogues" unique_id=568777238 instance=ExtResource("14_004et")]
 position = Vector2(-318, 48)
 sprite_frames = SubResource("SpriteFrames_3qrd2")
 frame_progress = 0.177338
@@ -1793,7 +1791,7 @@ stream = ExtResource("24_f7hqo")
 [node name="Audio_bad" parent="Dialogues/Elf_5" index="4"]
 stream = ExtResource("25_swgjl")
 
-[node name="Dwarf_5" parent="Dialogues" instance=ExtResource("14_004et")]
+[node name="Dwarf_5" parent="Dialogues" unique_id=1781418843 instance=ExtResource("14_004et")]
 unique_name_in_owner = true
 position = Vector2(-318, 288)
 sprite_frames = SubResource("SpriteFrames_yhdgv")
@@ -1827,7 +1825,7 @@ volume_db = -5.0
 stream = ExtResource("21_yyqsm")
 volume_db = -5.0
 
-[node name="Knight_5" parent="Dialogues" instance=ExtResource("14_004et")]
+[node name="Knight_5" parent="Dialogues" unique_id=1659625096 instance=ExtResource("14_004et")]
 position = Vector2(-318, -10)
 text_1 = "Минотавр! Я рад сообщить тебе, что наш путь подошел к концу! Я нашел ее, нашу дражайшую принцессу. Она немного... изменилась, но все так же прекрасна."
 text_2 = "А еще она сразила того поганца, который ее утащил. Сама! Одолела его, а когда я нашел ее, он уже был связан. Я горд служить такой деве, как она."
@@ -1846,7 +1844,7 @@ stream = ExtResource("17_s57sv")
 [node name="Audio_bad" parent="Dialogues/Knight_5" index="4"]
 stream = ExtResource("18_7bxjp")
 
-[node name="Bandit_5" parent="Dialogues" instance=ExtResource("14_004et")]
+[node name="Bandit_5" parent="Dialogues" unique_id=1946363681 instance=ExtResource("14_004et")]
 position = Vector2(-318, 47)
 sprite_frames = SubResource("SpriteFrames_3h6vo")
 text_1 = "Уххх... Ты чертов бык. Из-за тебя я теперь угожу в темницу, черт возьми! Мог бы просто мне помочь, а не корчить из себя правильного. И я бы спокойно смотался отсюда. "
@@ -1878,7 +1876,7 @@ volume_db = -5.0
 stream = ExtResource("43_aviev")
 volume_db = -5.0
 
-[node name="Princess_5" parent="Dialogues" instance=ExtResource("14_004et")]
+[node name="Princess_5" parent="Dialogues" unique_id=1952560032 instance=ExtResource("14_004et")]
 position = Vector2(-318, 61)
 sprite_frames = SubResource("SpriteFrames_7gxyu")
 text_1 = "Ох, слава богам! Наконец-то мы можем отсюда выбраться. Вильгельм нашел меня, но перед этим я нашла этого гнусного разбойника. И дала ему по заслугам! Ха-ха! Это было так приятно."
@@ -1909,7 +1907,7 @@ volume_db = -2.0
 stream = ExtResource("24_ga80r")
 volume_db = 2.0
 
-[node name="Skeleton_5" parent="Dialogues" instance=ExtResource("14_004et")]
+[node name="Skeleton_5" parent="Dialogues" unique_id=775619992 instance=ExtResource("14_004et")]
 position = Vector2(-318, -2)
 sprite_frames = SubResource("SpriteFrames_sl8oo")
 text_1 = "Фух, ну и денек, да? Я думаю, нам уже пора закругляться, здоровяк. Встретил я тут одного коротышку, славный малый."
@@ -1940,15 +1938,15 @@ stream = ExtResource("34_jar8y")
 [node name="Audio_bad" parent="Dialogues/Skeleton_5" index="4"]
 stream = ExtResource("34_jar8y")
 
-[node name="Kiosk" type="Sprite2D" parent="."]
+[node name="Kiosk" type="Sprite2D" parent="." unique_id=801939527]
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("18_fqqo3")
 
-[node name="Flash" type="Sprite2D" parent="Kiosk"]
+[node name="Flash" type="Sprite2D" parent="Kiosk" unique_id=262832169]
 position = Vector2(-990.667, -437.333)
 texture = ExtResource("31_n1v50")
 
-[node name="fire" type="AnimatedSprite2D" parent="Kiosk/Flash"]
+[node name="fire" type="AnimatedSprite2D" parent="Kiosk/Flash" unique_id=1109901196]
 show_behind_parent = true
 position = Vector2(-4, 18.6667)
 scale = Vector2(2.71186, 1)
@@ -1957,13 +1955,13 @@ animation = &"fire"
 autoplay = "fire"
 frame_progress = 0.09476
 
-[node name="Audio_fire" type="AudioStreamPlayer2D" parent="Kiosk/Flash"]
+[node name="Audio_fire" type="AudioStreamPlayer2D" parent="Kiosk/Flash" unique_id=1061938800]
 position = Vector2(0.000325521, 124)
 stream = ExtResource("22_5hg5s")
 autoplay = true
 max_distance = 1200.0
 
-[node name="Gold" type="Label" parent="Kiosk"]
+[node name="Gold" type="Label" parent="Kiosk" unique_id=2002245418]
 unique_name_in_owner = true
 offset_left = -685.0
 offset_top = -627.0
@@ -1975,7 +1973,7 @@ theme_override_font_sizes/font_size = 40
 text = "0/ 1000"
 horizontal_alignment = 2
 
-[node name="plus_money" type="Label" parent="Kiosk/Gold"]
+[node name="plus_money" type="Label" parent="Kiosk/Gold" unique_id=2077533361]
 visible = false
 layout_mode = 0
 offset_left = 61.3334
@@ -1989,17 +1987,15 @@ theme_override_fonts/font = ExtResource("44_205ck")
 theme_override_font_sizes/font_size = 40
 text = "+40"
 
-[node name="Animation_gold" type="AnimationPlayer" parent="Kiosk/Gold/plus_money"]
+[node name="Animation_gold" type="AnimationPlayer" parent="Kiosk/Gold/plus_money" unique_id=1476111255]
 unique_name_in_owner = true
-libraries = {
-"": SubResource("AnimationLibrary_urg30")
-}
+libraries/ = SubResource("AnimationLibrary_urg30")
 
-[node name="Audio_gold" type="AudioStreamPlayer2D" parent="Kiosk/Gold"]
+[node name="Audio_gold" type="AudioStreamPlayer2D" parent="Kiosk/Gold" unique_id=55589350]
 unique_name_in_owner = true
 stream = ExtResource("63_m8nry")
 
-[node name="Button_good" type="TextureButton" parent="Kiosk"]
+[node name="Button_good" type="TextureButton" parent="Kiosk" unique_id=1750732440]
 unique_name_in_owner = true
 visible = false
 modulate = Color(1, 1, 1, 0.505882)
@@ -2018,7 +2014,7 @@ disabled = true
 texture_normal = ExtResource("64_mm6wd")
 texture_hover = ExtResource("65_2is1o")
 
-[node name="Label" type="Label" parent="Kiosk/Button_good"]
+[node name="Label" type="Label" parent="Kiosk/Button_good" unique_id=176442951]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.98
@@ -2034,103 +2030,103 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="Table" parent="." instance=ExtResource("2_8lveu")]
+[node name="Table" parent="." unique_id=461095732 instance=ExtResource("2_8lveu")]
 position = Vector2(-292, 330)
 
-[node name="Back_items" type="Node2D" parent="."]
+[node name="Back_items" type="Node2D" parent="." unique_id=1768014581]
 modulate = Color(0.374139, 0.374139, 0.374139, 1)
 scale = Vector2(0.7, 0.7)
 
-[node name="Energy" type="Sprite2D" parent="Back_items"]
+[node name="Energy" type="Sprite2D" parent="Back_items" unique_id=84818990]
 position = Vector2(167.143, 365.714)
 texture = ExtResource("5_rahx3")
 
-[node name="Energy2" type="Sprite2D" parent="Back_items"]
+[node name="Energy2" type="Sprite2D" parent="Back_items" unique_id=1603787406]
 position = Vector2(198.571, 392.857)
 texture = ExtResource("5_rahx3")
 
-[node name="Energy3" type="Sprite2D" parent="Back_items"]
+[node name="Energy3" type="Sprite2D" parent="Back_items" unique_id=311113982]
 position = Vector2(267.143, 378.571)
 texture = ExtResource("5_rahx3")
 
-[node name="Horseshoe" type="Sprite2D" parent="Back_items"]
+[node name="Horseshoe" type="Sprite2D" parent="Back_items" unique_id=1916914905]
 position = Vector2(850.143, -165.357)
 texture = ExtResource("9_ksmgt")
 
-[node name="Horseshoe2" type="Sprite2D" parent="Back_items"]
+[node name="Horseshoe2" type="Sprite2D" parent="Back_items" unique_id=1937527964]
 position = Vector2(941.571, -169.643)
 texture = ExtResource("9_ksmgt")
 
-[node name="Rune" type="Sprite2D" parent="Back_items"]
+[node name="Rune" type="Sprite2D" parent="Back_items" unique_id=741402612]
 position = Vector2(1186.93, -176.429)
 texture = ExtResource("11_17cvt")
 
-[node name="Rune2" type="Sprite2D" parent="Back_items"]
+[node name="Rune2" type="Sprite2D" parent="Back_items" unique_id=356244195]
 position = Vector2(1090, -157.143)
 texture = ExtResource("11_17cvt")
 
-[node name="Pillow" type="Sprite2D" parent="Back_items"]
+[node name="Pillow" type="Sprite2D" parent="Back_items" unique_id=159489104]
 position = Vector2(992.857, 227.143)
 texture = ExtResource("15_5oofi")
 
-[node name="Meat" type="Sprite2D" parent="Back_items"]
+[node name="Meat" type="Sprite2D" parent="Back_items" unique_id=639124580]
 position = Vector2(517.679, 404.143)
 texture = ExtResource("3_30tcc")
 
-[node name="Meat2" type="Sprite2D" parent="Back_items"]
+[node name="Meat2" type="Sprite2D" parent="Back_items" unique_id=1040882179]
 position = Vector2(606.25, 437)
 texture = ExtResource("3_30tcc")
 
-[node name="Beer" type="Sprite2D" parent="Back_items"]
+[node name="Beer" type="Sprite2D" parent="Back_items" unique_id=1930442297]
 position = Vector2(699.929, 414.571)
 texture = ExtResource("3_wjluu")
 
-[node name="Scroll" type="Sprite2D" parent="Back_items"]
+[node name="Scroll" type="Sprite2D" parent="Back_items" unique_id=686649017]
 position = Vector2(1204.29, -472.857)
 texture = ExtResource("13_1ttdh")
 
-[node name="Map" type="Sprite2D" parent="."]
+[node name="Map" type="Sprite2D" parent="." unique_id=975376846]
 unique_name_in_owner = true
 position = Vector2(609, -329)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("32_4qie0")
 
-[node name="Items" type="Node2D" parent="."]
+[node name="Items" type="Node2D" parent="." unique_id=1423049161]
 
-[node name="Energy" parent="Items" instance=ExtResource("2_6gmc7")]
+[node name="Energy" parent="Items" unique_id=194881274 instance=ExtResource("2_6gmc7")]
 position = Vector2(160, 288)
 texture = ExtResource("5_rahx3")
 name_item = "energy"
 texture_area = ExtResource("6_f21tu")
 text_description = "ЗЕЛЬЕ ЭНЕРГИИ: Мгновенно освежает и бодрит. Очень подходит уставшим после драки воинам или вымотавшимся после дороги путникам."
 
-[node name="Audio_item" parent="Items/Energy" index="3"]
+[node name="Audio_item" parent="Items/Energy" index="3" unique_id=832995166]
 stream = ExtResource("34_mb5wx")
 
-[node name="Meat" parent="Items" instance=ExtResource("2_6gmc7")]
+[node name="Meat" parent="Items" unique_id=1767982308 instance=ExtResource("2_6gmc7")]
 position = Vector2(352.375, 324.9)
 texture = ExtResource("3_30tcc")
 name_item = "meat"
 texture_area = ExtResource("4_05ukm")
 text_description = "МЯСО: Кусок кабаньего мяса. Отлично насыщает и собирает взгляды голодных орков. На вкус довольно неплохо."
 
-[node name="Audio_item" parent="Items/Meat" index="3"]
+[node name="Audio_item" parent="Items/Meat" index="3" unique_id=832995166]
 stream = ExtResource("36_x2vhp")
 volume_db = 10.0
 
-[node name="Beer" parent="Items" instance=ExtResource("2_6gmc7")]
+[node name="Beer" parent="Items" unique_id=1784285887 instance=ExtResource("2_6gmc7")]
 position = Vector2(552.95, 302.2)
 texture = ExtResource("3_wjluu")
 name_item = "beer"
 texture_area = ExtResource("4_j3s7l")
 text_description = "ЭЛЬ: Сладкий и вкусный. Поднимает настроение и начинает драки в тавернах. Особо любимый напиток у гномов."
 
-[node name="Audio_item" parent="Items/Beer" index="3"]
+[node name="Audio_item" parent="Items/Beer" index="3" unique_id=832995166]
 stream = ExtResource("38_yxdbn")
 volume_db = 10.0
 attenuation = 1.56917
 
-[node name="Scroll_of_fire" parent="Items" instance=ExtResource("2_6gmc7")]
+[node name="Scroll_of_fire" parent="Items" unique_id=718089222 instance=ExtResource("2_6gmc7")]
 position = Vector2(803, -315)
 texture = ExtResource("13_1ttdh")
 name_item = "fire"
@@ -2138,11 +2134,11 @@ texture_area = ExtResource("14_b3nl8")
 text_description = "СВИТОК ОГНЯ: Свиток с заклинанием, при прочтении которого создается волшебное пламя, подчиненное хозяину. Может согреть, осветить дорогу или сжечь врага."
 short_arm = false
 
-[node name="Audio_item" parent="Items/Scroll_of_fire" index="3"]
+[node name="Audio_item" parent="Items/Scroll_of_fire" index="3" unique_id=832995166]
 stream = ExtResource("39_xrnxa")
 volume_db = 10.0
 
-[node name="Pillow" parent="Items" instance=ExtResource("2_6gmc7")]
+[node name="Pillow" parent="Items" unique_id=1499140564 instance=ExtResource("2_6gmc7")]
 position = Vector2(735, 180)
 texture = ExtResource("15_5oofi")
 name_item = "pillow"
@@ -2150,11 +2146,11 @@ texture_area = ExtResource("16_a3tep")
 text_description = "ПОДУШКА: Мягкая большая подушка с гусиными перьями. Отлично подойдет для отдыха и сна, а также ей можно что-нибудь подпереть."
 short_arm = false
 
-[node name="Audio_item" parent="Items/Pillow" index="3"]
+[node name="Audio_item" parent="Items/Pillow" index="3" unique_id=832995166]
 stream = ExtResource("41_pgyut")
 volume_db = 5.0
 
-[node name="Horseshoe" parent="Items" instance=ExtResource("2_6gmc7")]
+[node name="Horseshoe" parent="Items" unique_id=605234258 instance=ExtResource("2_6gmc7")]
 position = Vector2(628.1, -93.75)
 texture = ExtResource("9_ksmgt")
 name_item = "luck"
@@ -2162,10 +2158,10 @@ texture_area = ExtResource("10_1yw8s")
 text_description = "ПОДКОВА УДАЧИ: Делает судьбу более дружелюбной к хозяину и ведет его по верному пути. Увеличивает шансы найти что-то полезное."
 short_arm = false
 
-[node name="Audio_item" parent="Items/Horseshoe" index="3"]
+[node name="Audio_item" parent="Items/Horseshoe" index="3" unique_id=832995166]
 stream = ExtResource("43_8xdlk")
 
-[node name="Rune" parent="Items" instance=ExtResource("2_6gmc7")]
+[node name="Rune" parent="Items" unique_id=1691038419 instance=ExtResource("2_6gmc7")]
 position = Vector2(798.85, -96.5)
 texture = ExtResource("11_17cvt")
 name_item = "protection"
@@ -2173,16 +2169,16 @@ texture_area = ExtResource("12_ufqll")
 text_description = "РУНА ЗАЩИТЫ: Если носить с собой, то создает непроницаемый магический щит вокруг владельца. Хватает надолго."
 short_arm = false
 
-[node name="Audio_item" parent="Items/Rune" index="3"]
+[node name="Audio_item" parent="Items/Rune" index="3" unique_id=832995166]
 stream = ExtResource("45_2k5am")
 
-[node name="prices" type="Node2D" parent="."]
+[node name="prices" type="Node2D" parent="." unique_id=1170809041]
 
-[node name="Price" type="Sprite2D" parent="prices"]
+[node name="Price" type="Sprite2D" parent="prices" unique_id=1771625788]
 position = Vector2(199, 405)
 texture = ExtResource("87_agacy")
 
-[node name="plus_money" type="Label" parent="prices/Price"]
+[node name="plus_money" type="Label" parent="prices/Price" unique_id=1233567906]
 offset_left = -50.0
 offset_top = -25.0
 offset_right = 48.0
@@ -2196,11 +2192,11 @@ text = "40"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Price2" type="Sprite2D" parent="prices"]
+[node name="Price2" type="Sprite2D" parent="prices" unique_id=144398533]
 position = Vector2(397, 405)
 texture = ExtResource("87_agacy")
 
-[node name="plus_money" type="Label" parent="prices/Price2"]
+[node name="plus_money" type="Label" parent="prices/Price2" unique_id=306134307]
 offset_left = -50.0
 offset_top = -24.0
 offset_right = 48.0
@@ -2214,11 +2210,11 @@ text = "40"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Price3" type="Sprite2D" parent="prices"]
+[node name="Price3" type="Sprite2D" parent="prices" unique_id=1381176907]
 position = Vector2(598, 405)
 texture = ExtResource("87_agacy")
 
-[node name="plus_money" type="Label" parent="prices/Price3"]
+[node name="plus_money" type="Label" parent="prices/Price3" unique_id=603540966]
 offset_left = -49.0
 offset_top = -24.0
 offset_right = 49.0
@@ -2232,11 +2228,11 @@ text = "40"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Price4" type="Sprite2D" parent="prices"]
+[node name="Price4" type="Sprite2D" parent="prices" unique_id=1323891200]
 position = Vector2(849, 201)
 texture = ExtResource("87_agacy")
 
-[node name="plus_money" type="Label" parent="prices/Price4"]
+[node name="plus_money" type="Label" parent="prices/Price4" unique_id=1450951663]
 offset_left = -49.0
 offset_top = -25.0
 offset_right = 49.0
@@ -2250,11 +2246,11 @@ text = "40"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Price5" type="Sprite2D" parent="prices"]
+[node name="Price5" type="Sprite2D" parent="prices" unique_id=1002925841]
 position = Vector2(672, -38)
 texture = ExtResource("87_agacy")
 
-[node name="plus_money" type="Label" parent="prices/Price5"]
+[node name="plus_money" type="Label" parent="prices/Price5" unique_id=1018009222]
 offset_left = -49.0
 offset_top = -24.0
 offset_right = 49.0
@@ -2268,11 +2264,11 @@ text = "40"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Price6" type="Sprite2D" parent="prices"]
+[node name="Price6" type="Sprite2D" parent="prices" unique_id=1960076295]
 position = Vector2(846, -38)
 texture = ExtResource("87_agacy")
 
-[node name="plus_money" type="Label" parent="prices/Price6"]
+[node name="plus_money" type="Label" parent="prices/Price6" unique_id=2030213778]
 offset_left = -49.0
 offset_top = -24.0
 offset_right = 49.0
@@ -2286,11 +2282,11 @@ text = "40"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Price7" type="Sprite2D" parent="prices"]
+[node name="Price7" type="Sprite2D" parent="prices" unique_id=1304772249]
 position = Vector2(772, -277)
 texture = ExtResource("87_agacy")
 
-[node name="plus_money" type="Label" parent="prices/Price7"]
+[node name="plus_money" type="Label" parent="prices/Price7" unique_id=268021889]
 offset_left = -49.0
 offset_top = -25.0
 offset_right = 49.0
@@ -2304,12 +2300,12 @@ text = "40"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Price8" type="Sprite2D" parent="prices"]
+[node name="Price8" type="Sprite2D" parent="prices" unique_id=180878081]
 position = Vector2(590.625, -280)
 scale = Vector2(1.26205, 0.827779)
 texture = ExtResource("87_agacy")
 
-[node name="plus_money" type="Label" parent="."]
+[node name="plus_money" type="Label" parent="." unique_id=1355799969]
 offset_left = 545.0
 offset_top = -302.0
 offset_right = 636.0
@@ -2323,38 +2319,38 @@ text = "1000"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Harp" parent="." instance=ExtResource("33_bfj6j")]
+[node name="Harp" parent="." unique_id=382427751 instance=ExtResource("33_bfj6j")]
 position = Vector2(-835, 299)
 
-[node name="Minotaur" parent="." instance=ExtResource("32_ia3cw")]
+[node name="Minotaur" parent="." unique_id=1742376342 instance=ExtResource("32_ia3cw")]
 
-[node name="HP" type="Node2D" parent="."]
+[node name="HP" type="Node2D" parent="." unique_id=1946501834]
 
-[node name="FullHp_1" type="Sprite2D" parent="HP"]
+[node name="FullHp_1" type="Sprite2D" parent="HP" unique_id=590522119]
 unique_name_in_owner = true
 position = Vector2(21, -439)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("91_t73q8")
 
-[node name="FullHp_2" type="Sprite2D" parent="HP"]
+[node name="FullHp_2" type="Sprite2D" parent="HP" unique_id=2028991755]
 unique_name_in_owner = true
 position = Vector2(84, -439)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("91_t73q8")
 
-[node name="FullHp_3" type="Sprite2D" parent="HP"]
+[node name="FullHp_3" type="Sprite2D" parent="HP" unique_id=11519684]
 unique_name_in_owner = true
 position = Vector2(147, -439)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("91_t73q8")
 
-[node name="Left_Hp_1" type="CPUParticles2D" parent="HP"]
+[node name="Left_Hp_1" type="CPUParticles2D" parent="HP" unique_id=615033953]
 unique_name_in_owner = true
 position = Vector2(21, -439)
 emitting = false
 amount = 1
-one_shot = true
 texture = ExtResource("92_klq3d")
+one_shot = true
 emission_shape = 1
 emission_sphere_radius = 20.0
 gravity = Vector2(-50, 100)
@@ -2362,13 +2358,13 @@ scale_amount_min = 0.75
 scale_amount_max = 0.75
 color_ramp = SubResource("Gradient_rt0n7")
 
-[node name="Right_Hp_1" type="CPUParticles2D" parent="HP"]
+[node name="Right_Hp_1" type="CPUParticles2D" parent="HP" unique_id=1677033432]
 unique_name_in_owner = true
 position = Vector2(21, -439)
 emitting = false
 amount = 1
-one_shot = true
 texture = ExtResource("93_q672a")
+one_shot = true
 emission_shape = 1
 emission_sphere_radius = 20.0
 gravity = Vector2(50, 100)
@@ -2376,13 +2372,13 @@ scale_amount_min = 0.75
 scale_amount_max = 0.75
 color_ramp = SubResource("Gradient_rt0n7")
 
-[node name="Left_Hp_2" type="CPUParticles2D" parent="HP"]
+[node name="Left_Hp_2" type="CPUParticles2D" parent="HP" unique_id=317727930]
 unique_name_in_owner = true
 position = Vector2(85, -439)
 emitting = false
 amount = 1
-one_shot = true
 texture = ExtResource("92_klq3d")
+one_shot = true
 emission_shape = 1
 emission_sphere_radius = 20.0
 gravity = Vector2(-50, 100)
@@ -2390,13 +2386,13 @@ scale_amount_min = 0.75
 scale_amount_max = 0.75
 color_ramp = SubResource("Gradient_rt0n7")
 
-[node name="Right_Hp_2" type="CPUParticles2D" parent="HP"]
+[node name="Right_Hp_2" type="CPUParticles2D" parent="HP" unique_id=1625457708]
 unique_name_in_owner = true
 position = Vector2(85, -439)
 emitting = false
 amount = 1
-one_shot = true
 texture = ExtResource("93_q672a")
+one_shot = true
 emission_shape = 1
 emission_sphere_radius = 20.0
 gravity = Vector2(50, 100)
@@ -2404,13 +2400,13 @@ scale_amount_min = 0.75
 scale_amount_max = 0.75
 color_ramp = SubResource("Gradient_rt0n7")
 
-[node name="Left_Hp_3" type="CPUParticles2D" parent="HP"]
+[node name="Left_Hp_3" type="CPUParticles2D" parent="HP" unique_id=367103501]
 unique_name_in_owner = true
 position = Vector2(148, -439)
 emitting = false
 amount = 1
-one_shot = true
 texture = ExtResource("92_klq3d")
+one_shot = true
 emission_shape = 1
 emission_sphere_radius = 20.0
 gravity = Vector2(-50, 100)
@@ -2418,13 +2414,13 @@ scale_amount_min = 0.75
 scale_amount_max = 0.75
 color_ramp = SubResource("Gradient_rt0n7")
 
-[node name="Right_Hp_3" type="CPUParticles2D" parent="HP"]
+[node name="Right_Hp_3" type="CPUParticles2D" parent="HP" unique_id=649016069]
 unique_name_in_owner = true
 position = Vector2(148, -439)
 emitting = false
 amount = 1
-one_shot = true
 texture = ExtResource("93_q672a")
+one_shot = true
 emission_shape = 1
 emission_sphere_radius = 20.0
 gravity = Vector2(50, 100)
@@ -2432,16 +2428,16 @@ scale_amount_min = 0.75
 scale_amount_max = 0.75
 color_ramp = SubResource("Gradient_rt0n7")
 
-[node name="Camera" type="Camera2D" parent="."]
+[node name="Camera" type="Camera2D" parent="." unique_id=1209680119]
 
-[node name="Exit_window" parent="." instance=ExtResource("96_igde4")]
+[node name="Exit_window" parent="." unique_id=880838754 instance=ExtResource("96_igde4")]
 unique_name_in_owner = true
 visible = false
 
-[node name="Manul" parent="." instance=ExtResource("97_3r2ph")]
+[node name="Manul" parent="." unique_id=417857808 instance=ExtResource("97_3r2ph")]
 visible = false
 
-[node name="end_or_no" parent="." instance=ExtResource("98_ee24v")]
+[node name="end_or_no" parent="." unique_id=30558588 instance=ExtResource("98_ee24v")]
 unique_name_in_owner = true
 visible = false
 
