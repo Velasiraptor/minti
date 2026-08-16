@@ -19,6 +19,7 @@
 [ext_resource type="FontFile" uid="uid://2d7kvrvatcea" path="res://Fonts/DS_Greece.ttf" id="17_m3v25"]
 [ext_resource type="AudioStream" uid="uid://cmp6fwdjtvc6h" path="res://Sounds/coins.mp3" id="18_07prl"]
 [ext_resource type="PackedScene" uid="uid://b27w8h1c8lp6d" path="res://Scenes/Table/table.tscn" id="20_bfras"]
+[ext_resource type="Texture2D" uid="uid://dvj4dpidq7hlo" path="res://Sprites/Kiosk/price.png" id="25_s0w6d"]
 [ext_resource type="PackedScene" uid="uid://1eh5fp3vpcef" path="res://Scenes/Items/item.tscn" id="30_p8kc7"]
 [ext_resource type="PackedScene" uid="uid://cb1ibijfpvpq2" path="res://Scenes/Items/harp.tscn" id="46_bucqw"]
 [ext_resource type="PackedScene" uid="uid://cy2ryh8320b6h" path="res://Scenes/Minotaur/minotaur.tscn" id="47_uju7d"]
@@ -421,5 +422,25 @@ position = Vector2(198, 266)
 [node name="item2" parent="items" unique_id=828766006 instance=ExtResource("30_p8kc7")]
 position = Vector2(648, -117)
 short_arm = false
+
+[node name="Price" type="Node2D" parent="." unique_id=192632108]
+
+[node name="Price" type="Sprite2D" parent="Price" unique_id=1734086850]
+position = Vector2(213, 367)
+texture = ExtResource("25_s0w6d")
+
+[node name="plus_money" type="Label" parent="Price/Price" unique_id=888487180]
+offset_left = -50.0
+offset_top = -25.0
+offset_right = 48.0
+offset_bottom = 25.0
+theme_override_colors/font_color = Color(0.235294, 0.156863, 0.109804, 1)
+theme_override_colors/font_outline_color = Color(0.87451, 0.713726, 0.482353, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("17_m3v25")
+theme_override_font_sizes/font_size = 22
+text = "40"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Minotaur" parent="." unique_id=1134282030 instance=ExtResource("47_uju7d")]
