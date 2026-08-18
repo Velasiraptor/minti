@@ -19,6 +19,7 @@
 [ext_resource type="FontFile" uid="uid://2d7kvrvatcea" path="res://Fonts/DS_Greece.ttf" id="17_m3v25"]
 [ext_resource type="AudioStream" uid="uid://cmp6fwdjtvc6h" path="res://Sounds/coins.mp3" id="18_07prl"]
 [ext_resource type="PackedScene" uid="uid://b27w8h1c8lp6d" path="res://Scenes/Table/table.tscn" id="20_bfras"]
+[ext_resource type="Script" uid="uid://c8045pxp1qmxp" path="res://Scenes/Items/DataItems.gd" id="25_5m7u2"]
 [ext_resource type="Texture2D" uid="uid://dvj4dpidq7hlo" path="res://Sprites/Kiosk/price.png" id="25_s0w6d"]
 [ext_resource type="PackedScene" uid="uid://1eh5fp3vpcef" path="res://Scenes/Items/item.tscn" id="30_p8kc7"]
 [ext_resource type="PackedScene" uid="uid://cb1ibijfpvpq2" path="res://Scenes/Items/harp.tscn" id="46_bucqw"]
@@ -188,6 +189,24 @@ _data = {
 
 [sub_resource type="Gradient" id="Gradient_j3sfj"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Resource" id="Resource_s0w6d"]
+script = ExtResource("25_5m7u2")
+id = "bear"
+name_ru = "Пиво"
+description_ru = "Напиток богов"
+name_en = "Bear"
+description_en = "DRINK DRINK"
+metadata/_custom_type_script = "uid://c8045pxp1qmxp"
+
+[sub_resource type="Resource" id="Resource_lekt2"]
+script = ExtResource("25_5m7u2")
+id = "meat"
+name_ru = "Мясо"
+description_ru = "Мяяяяясо"
+name_en = "Meat"
+description_en = "I am fat..."
+metadata/_custom_type_script = "uid://c8045pxp1qmxp"
 
 [node name="1_level" type="Node2D" unique_id=461230494]
 
@@ -418,9 +437,11 @@ color_ramp = SubResource("Gradient_j3sfj")
 
 [node name="item" parent="items" unique_id=173174793 instance=ExtResource("30_p8kc7")]
 position = Vector2(198, 266)
+item_data = SubResource("Resource_s0w6d")
 
 [node name="item2" parent="items" unique_id=828766006 instance=ExtResource("30_p8kc7")]
 position = Vector2(648, -117)
+item_data = SubResource("Resource_lekt2")
 short_arm = false
 
 [node name="Price" type="Node2D" parent="." unique_id=192632108]
