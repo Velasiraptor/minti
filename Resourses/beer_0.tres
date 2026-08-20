@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://c0i6phxn340xi"]
+
+[ext_resource type="Script" uid="uid://c8045pxp1qmxp" path="res://Scenes/Items/DataItems.gd" id="1_yo36h"]
+
+[resource]
+script = ExtResource("1_yo36h")
+id = "0"
+name_ru = "Пиво"
+description_ru = "Напиток богов"
+name_en = "Bear"
+description_en = "DRINK DRINK"
+metadata/_custom_type_script = "uid://c8045pxp1qmxp"

@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://bfxdojlfd06yj"]
+
+[ext_resource type="Script" uid="uid://dhu1y4k2pqhgn" path="res://Scenes/Items/Bestiary/bestiary_window.gd" id="1_0aeb7"]
+[ext_resource type="Texture2D" uid="uid://kjpw0qwruq0" path="res://Sprites/Items/Bestiary/Note_close.png" id="2_0aeb7"]
+[ext_resource type="PackedScene" uid="uid://jyu8r35yfkbf" path="res://Scenes/Items/Bestiary/page_1.tscn" id="2_vt804"]
+[ext_resource type="Resource" uid="uid://c0i6phxn340xi" path="res://Resourses/beer_0.tres" id="3_bkkjr"]
+[ext_resource type="Texture2D" uid="uid://dqwuldjlcxkdn" path="res://Sprites/Items/Bestiary/Note_close_hover.png" id="3_vt804"]
+[ext_resource type="Resource" uid="uid://drnumj4b1wfjm" path="res://Resourses/meat_1.tres" id="4_bkkjr"]
+[ext_resource type="Texture2D" uid="uid://dw414iwajlqv7" path="res://Sprites/description.png" id="5_7pxc4"]
+[ext_resource type="FontFile" uid="uid://082o24hwqm21" path="res://Fonts/baskervillebold.ttf" id="6_b40nx"]
+
+[node name="Bestiary_window" type="CanvasLayer" unique_id=2105128770 groups=["Bestiary_window"]]
+script = ExtResource("1_0aeb7")
+
+[node name="Pages" type="Control" parent="." unique_id=540898071]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Page_1" parent="Pages" unique_id=1938047731 instance=ExtResource("2_vt804")]
+layout_mode = 1
+item_data = ExtResource("3_bkkjr")
+
+[node name="Page_2" parent="Pages" unique_id=1405634778 instance=ExtResource("2_vt804")]
+visible = false
+layout_mode = 1
+item_data = ExtResource("4_bkkjr")
+
+[node name="button_next_right" type="TextureButton" parent="." unique_id=87183351]
+offset_left = 1655.0
+offset_top = 848.0
+offset_right = 1789.5
+offset_bottom = 976.0
+texture_normal = ExtResource("5_7pxc4")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="button_next_right" unique_id=2108406264]
+custom_minimum_size = Vector2(337, 171)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.278431, 0.203922, 0.101961, 1)
+theme_override_fonts/font = ExtResource("6_b40nx")
+theme_override_font_sizes/font_size = 64
+text = "-->"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="button_next_left" type="TextureButton" parent="." unique_id=1886981488]
+offset_left = 134.0
+offset_top = 850.0
+offset_right = 268.5
+offset_bottom = 978.0
+texture_normal = ExtResource("5_7pxc4")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="button_next_left" unique_id=1044351961]
+custom_minimum_size = Vector2(337, 171)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.278431, 0.203922, 0.101961, 1)
+theme_override_fonts/font = ExtResource("6_b40nx")
+theme_override_font_sizes/font_size = 64
+text = "<--"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="button_close" type="TextureButton" parent="." unique_id=1012179986]
+offset_left = 1555.0
+offset_top = 19.0
+offset_right = 1727.0
+offset_bottom = 178.0
+texture_normal = ExtResource("2_0aeb7")
+texture_hover = ExtResource("3_vt804")
+
+[connection signal="pressed" from="button_next_right" to="." method="_on_button_next_right_pressed"]
+[connection signal="pressed" from="button_next_left" to="." method="_on_button_next_left_pressed"]
+[connection signal="pressed" from="button_close" to="." method="_on_button_close_pressed"]

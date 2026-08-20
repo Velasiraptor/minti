@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Лавка минотавра"
-run/main_scene="res://Scenes/UI/main_menu.tscn"
+run/main_scene="uid://dwnobqd37y5b6"
 config/features=PackedStringArray("4.7", "Forward Plus")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 config/icon="res://Sprites/UI/icon_mini.png"

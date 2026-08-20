@@ -3,13 +3,15 @@ extends Sprite2D
 @export var item_data: ItemData  ## тэг итема
 @export var texture_normal: Texture ## спрайт с обводкой
 @export var texture_hover: Texture ## спрайт с обводкой
-@export var audio_click: AudioStream
+@export var audio_open: AudioStream
+@export var audio_close: AudioStream
 @export var short_arm := true ## активная если предмет для короткой руки
 
-@onready var audio_item = %Audio_item
+@onready var audio_open_bestiary: AudioStreamPlayer2D = %Audio_open_bestiary
+@onready var audio_close_bestiary: AudioStreamPlayer2D = %Audio_close_bestiary
+
 @onready var description_window: Sprite2D = %Description_window
 @onready var decr_label: Label = %decr_Label
-
 
 var item_active := false
 var mouse_in_item := false
@@ -20,11 +22,13 @@ var item_description: String
 
 
 func _ready():
+	modulate = "ffffff"
+	item_active = false
 	texture = texture_normal
-	audio_item.stream = audio_click
+	audio_open_bestiary.stream = audio_open
+	audio_close_bestiary.stream = audio_close
 	item_scale = scale
 	item_rotation = rotation
-	item_active = false
 	mouse_in_item = false
 	description_window.visible = false
 	if item_data:
@@ -39,26 +43,16 @@ func _ready():
 
 func _input(event: InputEvent) -> void: # нажатие на предмет
 	if event.is_action_pressed("click"):
-		if mouse_in_item:
-			if not item_active and ActiveTable.active_table == false:
-				item_on()
-				arm_minti()
-			elif item_active and ActiveTable.active_table == true:
-				item_off()
-			else:
-				animation_item_off()
-	elif event.is_action_pressed("PCM_click"):
-		if mouse_in_item:
-			open_bestiary()
-			texture = texture_normal
-			mouse_in_item = false
-			description_window.visible = false
+		if mouse_in_item and not item_active:
+			arm_minti()
+			item_on(ActiveTable.active_page)
 
 
 func _on_area_player_mouse_entered(): # Курсор на предмете
-	texture = texture_hover
-	mouse_in_item = true
-	description_window.visible = true
+	if not item_active:
+		texture = texture_hover
+		mouse_in_item = true
+		description_window.visible = true
 
 
 func _on_area_player_mouse_exited(): # Курсор не на предмете
@@ -67,20 +61,22 @@ func _on_area_player_mouse_exited(): # Курсор не на предмете
 	description_window.visible = false
 
 
-func item_on(): #Использование итема на стол
-	item_active = true
+func item_on(active_page): # Открытие бестиария
 	modulate = "929292"
 	animation_item_on()
-	audio_item.play()
-	get_tree().call_group("Table", "get_item", texture_normal, item_name)
+	audio_open_bestiary.play()
+	item_active = true
+	texture = texture_normal
+	mouse_in_item = false
+	description_window.visible = false
+	get_tree().call_group("Bestiary_window", "bestiary_window_open", active_page)
 
 
-func item_off(): #Возвращение итема обратно
-	item_active = false
+func item_off(): # Закрытие бестиария
 	modulate = "ffffff"
 	animation_item_on()
-	audio_item.play()
-	get_tree().call_group("Table", "delete_item")
+	audio_close_bestiary.play()
+	item_active = false
 
 
 func animation_item_on(): # анимация клика, когда на столе нет предмета
@@ -89,20 +85,8 @@ func animation_item_on(): # анимация клика, когда на сто�
 	tween.tween_property($".", "scale", Vector2(item_scale), 0.1)
 
 
-func animation_item_off(): # анимация клика, когда на столе есть предмет
-	var tween = get_tree().create_tween()
-	tween.tween_property($".", "rotation", item_rotation - 0.5, 0.1)
-	tween.tween_property($".", "rotation", item_rotation + 0.5, 0.1)
-	tween.tween_property($".", "rotation", item_rotation, 0.1)
-
-
 func arm_minti(): # анимация короткой/длинной руки минти
 	if short_arm:
 		get_tree().call_group("Minotaur", "grab_short")
 	else:
 		get_tree().call_group("Minotaur", "grab_long")
-
-
-func open_bestiary(): # Открытие бестиария
-	ActiveTable.active_page = int(item_data.id)
-	get_tree().call_group("Bestiary", "item_on", ActiveTable.active_page)

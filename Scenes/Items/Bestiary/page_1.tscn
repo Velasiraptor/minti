@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://jyu8r35yfkbf"]
+
+[ext_resource type="Texture2D" uid="uid://c6tv7r1m3hqgi" path="res://Sprites/Items/Bestiary/Note_open.png" id="1_u6gft"]
+[ext_resource type="Script" uid="uid://svvparoakui4" path="res://Scenes/Items/Bestiary/page_1.gd" id="2_fmlvd"]
+[ext_resource type="FontFile" uid="uid://082o24hwqm21" path="res://Fonts/baskervillebold.ttf" id="2_uapf4"]
+
+[node name="Page_1" type="TextureRect" unique_id=1938047731]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -865.5
+offset_top = -486.0
+offset_right = 865.5
+offset_bottom = 486.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+texture = ExtResource("1_u6gft")
+script = ExtResource("2_fmlvd")
+
+[node name="name_Label" type="Label" parent="." unique_id=1827564222]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(337, 171)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -811.5
+offset_top = 80.0
+offset_right = -210.5
+offset_bottom = 251.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0.19704503, 0.14053768, 0.06314324, 1)
+theme_override_fonts/font = ExtResource("2_uapf4")
+theme_override_font_sizes/font_size = 96
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="decr_Label" type="Label" parent="." unique_id=1487504813]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(337, 171)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -810.5
+offset_top = 318.0
+offset_right = -189.5
+offset_bottom = 726.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0.278431, 0.203922, 0.101961, 1)
+theme_override_fonts/font = ExtResource("2_uapf4")
+theme_override_font_sizes/font_size = 64
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2

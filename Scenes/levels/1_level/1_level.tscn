@@ -19,8 +19,11 @@
 [ext_resource type="FontFile" uid="uid://2d7kvrvatcea" path="res://Fonts/DS_Greece.ttf" id="17_m3v25"]
 [ext_resource type="AudioStream" uid="uid://cmp6fwdjtvc6h" path="res://Sounds/coins.mp3" id="18_07prl"]
 [ext_resource type="PackedScene" uid="uid://b27w8h1c8lp6d" path="res://Scenes/Table/table.tscn" id="20_bfras"]
-[ext_resource type="Script" uid="uid://c8045pxp1qmxp" path="res://Scenes/Items/DataItems.gd" id="25_5m7u2"]
+[ext_resource type="Resource" uid="uid://c0i6phxn340xi" path="res://Resourses/beer_0.tres" id="25_flv3n"]
 [ext_resource type="Texture2D" uid="uid://dvj4dpidq7hlo" path="res://Sprites/Kiosk/price.png" id="25_s0w6d"]
+[ext_resource type="PackedScene" uid="uid://m3ap3m5jpphl" path="res://Scenes/Items/Bestiary/bestiary_item.tscn" id="26_lekt2"]
+[ext_resource type="Resource" uid="uid://drnumj4b1wfjm" path="res://Resourses/meat_1.tres" id="26_wrteg"]
+[ext_resource type="PackedScene" uid="uid://bfxdojlfd06yj" path="res://Scenes/Items/Bestiary/bestiary_window.tscn" id="29_uox3u"]
 [ext_resource type="PackedScene" uid="uid://1eh5fp3vpcef" path="res://Scenes/Items/item.tscn" id="30_p8kc7"]
 [ext_resource type="PackedScene" uid="uid://cb1ibijfpvpq2" path="res://Scenes/Items/harp.tscn" id="46_bucqw"]
 [ext_resource type="PackedScene" uid="uid://cy2ryh8320b6h" path="res://Scenes/Minotaur/minotaur.tscn" id="47_uju7d"]
@@ -189,24 +192,6 @@ _data = {
 
 [sub_resource type="Gradient" id="Gradient_j3sfj"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
-
-[sub_resource type="Resource" id="Resource_s0w6d"]
-script = ExtResource("25_5m7u2")
-id = "bear"
-name_ru = "Пиво"
-description_ru = "Напиток богов"
-name_en = "Bear"
-description_en = "DRINK DRINK"
-metadata/_custom_type_script = "uid://c8045pxp1qmxp"
-
-[sub_resource type="Resource" id="Resource_lekt2"]
-script = ExtResource("25_5m7u2")
-id = "meat"
-name_ru = "Мясо"
-description_ru = "Мяяяяясо"
-name_en = "Meat"
-description_en = "I am fat..."
-metadata/_custom_type_script = "uid://c8045pxp1qmxp"
 
 [node name="1_level" type="Node2D" unique_id=461230494]
 
@@ -437,11 +422,15 @@ color_ramp = SubResource("Gradient_j3sfj")
 
 [node name="item" parent="items" unique_id=173174793 instance=ExtResource("30_p8kc7")]
 position = Vector2(198, 266)
-item_data = SubResource("Resource_s0w6d")
+item_data = ExtResource("25_flv3n")
 
 [node name="item2" parent="items" unique_id=828766006 instance=ExtResource("30_p8kc7")]
 position = Vector2(648, -117)
-item_data = SubResource("Resource_lekt2")
+item_data = ExtResource("26_wrteg")
+short_arm = false
+
+[node name="Bestiary" parent="items" unique_id=2013935029 instance=ExtResource("26_lekt2")]
+position = Vector2(804, 163)
 short_arm = false
 
 [node name="Price" type="Node2D" parent="." unique_id=192632108]
@@ -465,3 +454,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Minotaur" parent="." unique_id=1134282030 instance=ExtResource("47_uju7d")]
+
+[node name="Bestiary_window" parent="." unique_id=2105128770 instance=ExtResource("29_uox3u")]
+visible = false
